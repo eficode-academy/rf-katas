@@ -1,0 +1,4 @@
+-A setup/common.args
+--configure NumberOfTestCases:1
+--configure NumberOfKeywordsInTestSuite:5
+--rulefile setup/03-keywords_and_variables_rule.py

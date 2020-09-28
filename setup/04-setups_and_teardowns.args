@@ -1,0 +1,5 @@
+-A setup/common.args
+--rulefile setup/common_rules.py
+--configure NumberOfTestCases:2
+--configure NumberOfKeywordsInTestSuite:7
+--rulefile setup/04-setups_and_teardowns_rule.py

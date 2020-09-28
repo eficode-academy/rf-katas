@@ -1,0 +1,4 @@
+-A setup/common.args
+--configure NumberOfTestCases:1
+--configure NumberOfKeywordsInTestSuite:0
+--rulefile setup/02-robot_syntax_rule.py

@@ -1,0 +1,7 @@
+-i RequireSuiteDocumentation
+-i RequireTestDocumentation
+-i TooFewTestSteps
+-i RequireKeywordDocumentation
+-i TooFewKeywordSteps
+-i TrailingWhitespace
+--rulefile setup/common_rules.py

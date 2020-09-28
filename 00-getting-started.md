@@ -1,0 +1,47 @@
+# Getting started
+
+In this section we will install Robot Framework, needed test libraries and ensure that the environment is up and running in order to do web UI testing with Robot Framework.
+
+## Terminology
+
+In this section, you will see a lot of Python, operating system and Robot Framework related jargon which might be confusing to some. So before you go further, let's clarify some terminology that is used frequently in the Docker ecosystem.
+
+- *pip* - Python package manager, this is a tool that is needed to install Robot Framework and needed test libraries
+- *shell* - The shell is the command interpretor in an operating system such as Unix or GNU/Linux, it is a program that executes other programs
+- *bat / batch file / cmd* - A batch file is a script file in DOS, OS/2 and Microsoft Windows. It consists of a series of commands to be executed by the command-line interpreter, stored in a plain text file.
+- *robot* - The command line tool that allows the user to run Robot Framework test cases and tasks
+- *test suite* - A Robot file that contains test cases
+- *keyword* - keyword is like a function that robot uses to execute steps
+- *arguments* - Values that are given to keywords. Also known as parameters.
+
+## Install robotframework
+
+In order to run Robot Framework test cases we're going to need install Robot Framework. We install this by
+using `pip`. By default, the installation happens by calling `pip3 install <package_name>`, but if you are
+using an older version of Python or a virtual environment, you can try `pip install <package_name>` instead.
+
+Install Robot Framework: `pip3 install robotframework`.
+
+If the installation was successful, you can use `robot -h` command to verify that you get command line help for Robot Framework.
+
+Output should be something like this: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options
+
+To run automated test cases for web UIs, the most popular test library is SeleniumLibrary.
+
+Install SeleniumLibrary: `pip3 install robotframework-seleniumlibrary`.
+
+In order to ensure that you've done exercises as expected we need you to install robotframework-lint tool. A linting
+tool is a lightweight static analysis tool to verify that you and your team are doing your code consistently.
+
+Install Robot Framework linter: `pip3 install robotframework-lint`.
+
+## Verify installation
+
+Verify setup by running:
+
+  - in Windows: double click 00-verify_setup.cmd
+  - in MacOS/Linux: run command `./00-verify_setup.sh`
+
+If the output of the script is: `Setup in perfect condition!` then we're good to go.
+
+Otherwise, check the output and fix the missing packages or the webdriver is in the wrong place.

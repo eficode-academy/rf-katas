@@ -1,0 +1,4 @@
+-A setup/common.args
+--configure NumberOfTestCases:1
+--configure NumberOfKeywordsInTestSuite:5
+--rulefile setup/05-negative_testing_rule.py

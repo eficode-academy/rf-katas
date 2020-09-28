@@ -1,0 +1,4 @@
+-A setup/common.args
+-i NumberOfTestCases
+-i NumberOfKeywordsInTestSuite
+--rulefile setup/06-resource_files_rule.py
