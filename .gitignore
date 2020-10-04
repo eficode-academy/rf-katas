@@ -1,6 +1,7 @@
 #python
 __pycache__
 *.pyc
+venv/
 
 #robot
 *.html
@@ -9,6 +10,7 @@ robot/*
 *.jpg
 *.png
 *.xml
+geckodriver-*.log
 
 #OS
 
