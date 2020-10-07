@@ -1,12 +1,12 @@
 import sys
+import os
 import subprocess
 from pathlib import Path
 from pip._internal.utils.misc import get_installed_distributions
 
 IS_CHROME = False
 IS_FIREFOX = False
-ROOT_FOLDER = Path('.', 'setup')
-SMOKE_TEST_SUITE = ROOT_FOLDER / "verify_setup.robot"
+SMOKE_TEST_SUITE = os.path.join(".", "setup", "verify_setup.robot")
 
 def get_pip_packages():
     pip_packages = []
@@ -35,7 +35,7 @@ def check_rflint_package():
         sys.exit(1)
 
 def check_smoke_suite_location():
-    if not SMOKE_TEST_SUITE.is_file():
+    if not os.path.isfile(SMOKE_TEST_SUITE):
         print("File not located, please run from root folder of the exercises")
         print(SMOKE_TEST_SUITE)
         sys.exit(1)
