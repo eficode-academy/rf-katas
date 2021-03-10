@@ -29,7 +29,7 @@ Write needed steps line by line that you would perform if you would manually tes
 
 After you've added steps that you think are needed to manually test login feature run:
 
-  - Windows: double click `01-manual-testing.cmd`
-  - Linux/macOS: `./01-manual-testing.sh`
+  - Windows: double click `01-manual_testing.cmd`
+  - Linux/macOS: `./01-manual_testing.sh`
 
 If the output is `Ready to proceed!` then you're good to go! Otherwise the check the output that what is missing?
