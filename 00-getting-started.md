@@ -38,7 +38,9 @@ Install Robot Framework linter: `pip3 install robotframework-lint`.
 ## Start server
 
 In order to run the exercises in this training, you need to start the demo app. You can start the server
-by running `python3 server/server.py` in your terminal/command prompt.
+by running `python3 server/server.py` in your terminal/command prompt. Your terminal or command prompt is
+now occupied with running the server, which means you need to open another terminal/command prompt to run
+your tests.
 
 After the server has started it will be running in `localhost:7272`.
 
