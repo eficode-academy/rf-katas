@@ -43,7 +43,7 @@ Using the snippet from earlier we should get output:
 
 ```
 ==============================================================================
-Login                                                                         
+Login
 ==============================================================================
 Open browser                                                          | FAIL |
 Test case contains no keywords.
@@ -100,7 +100,7 @@ After that run `robot robot/login.robot` and the output should be something like
 
 ```
 ==============================================================================
-Login                                                                         
+Login
 ==============================================================================
 Welcome Page Should Be Visible After Successful Login                 | FAIL |
 No keyword with name 'Open Browser' found.
@@ -127,14 +127,14 @@ So, in order to take SeleniumLibrary into use during runtime we need to add a `*
 the library definition there.
 
 After `Library` you need to have _at least_ 2 spaces (preferably 4) before defining the library name:
-`Library    SomeLibrary`. 
+`Library    SomeLibrary`.
 
 Once you've added the `Settings` table and told Robot to use SeleniumLibrary you can run `robot robot/login.robot`
 again and your output should be something like this:
 
 ```
 ==============================================================================
-Login                                                                         
+Login
 ==============================================================================
 Welcome Page Should Be Visible After Successful Login                 | FAIL |
 No keyword with name 'Navigate to localhost:7272' found.
@@ -182,7 +182,7 @@ After you've successfully run the test case with `robot robot/login.robot` you s
 
 ```
 ==============================================================================
-Login                                                                         
+Login
 ==============================================================================
 Welcome Page Should Be Visible After Successful Login                 | PASS |
 ------------------------------------------------------------------------------
@@ -195,6 +195,6 @@ Login                                                                 | PASS |
 After you've made the test pass, ensure that it's done with right manner by running:
 
   - Windows: double click `02-robot_syntax.cmd`
-  - Linux/macOS: run `./02-robot_syntax.sh`
+  - Linux/macOS: run `./verify/02-robot_syntax.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.

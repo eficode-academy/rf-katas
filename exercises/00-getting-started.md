@@ -49,7 +49,7 @@ After the server has started it will be running in `localhost:7272`.
 Verify setup by running:
 
 - in Windows: double click 00-verify_setup.cmd
-- in MacOS/Linux: run command `./00-verify_setup.sh`
+- in MacOS/Linux: run command `./verify/00-verify_setup.sh`
 
 You should see Firefox and/or Chrome open to the test server for a few seconds then close down. Don't
 worry if only one browser opens, it's enough for the purpose of this training.

@@ -63,7 +63,7 @@ are after the failing keyword aren't executed anymore. Close the browser manuall
 
 Let's modify our test case a bit and let's add a `Teardown` into our test case. Add `[Teardown]` before
 `Close Browser` (on the same line, remember to leave 4 spaces between the two), so that our test case
-looks like this: 
+looks like this:
 
 ```
 Welcome Page Should Be Visible After Sucecsfull Login
@@ -133,6 +133,6 @@ That change indicates the test case reader that there is some precondition befor
 To ensure that changes are done in right manner run:
 
   - Windows: double click the `04-setups_and_teardowns.cmd`
-  - Linux/macOS: run `./04-setups_and_teardowns.sh`
+  - Linux/macOS: run `./verify/04-setups_and_teardowns.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.

@@ -21,7 +21,7 @@ Run the test with `robot robot/invalid_login.robot` command to verify the result
 When the test passes run the following command to ensure that changes are done in right manner run:
 
   - Windows: double click the `05-negative_testing.cmd`
-  - Linux/macOS: run `./05-negative_testing.sh`
+  - Linux/macOS: run `./verify/05-negative_testing.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
 

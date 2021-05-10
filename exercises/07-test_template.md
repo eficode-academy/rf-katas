@@ -59,7 +59,7 @@ Notice also that we have `[Teardown]` after every test separately. We can get ri
 into our `Settings` table. Our `Template Error Page Is Visible When Using Incorrect Credentials` keyword also
 starts with `Open Browser to Login Page`, which is repeated in every test and it's not really part of the test. We
 can add a `Test Setup` into our `Settings` table as well. After making those changes we can delete those lines
-from `Error Page Is Visible When Using Incorrect Credentials`. 
+from `Error Page Is Visible When Using Incorrect Credentials`.
 
 Also remember to add arguments for `Template Error Page Is Visible When Using Incorrect Credentials`.
 
@@ -130,6 +130,6 @@ Now let's create 4 more test cases. Just add new line <name of the test case> 4 
 Once you've implemented all 5 test cases run:
 
   - Windows: double click the `07-test_template.cmd`
-  - Linux/macOS: run `./07-test_template.sh`
+  - Linux/macOS: run `./verify/07-test_template.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.

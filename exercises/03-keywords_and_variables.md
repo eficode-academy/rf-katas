@@ -129,6 +129,6 @@ Once you've done those, run the `robot robot/login.robot` to verify that changes
 To ensure that changes are done in right manner run:
 
   - Windows: double click the `03-keywords_and_variables.cmd`
-  - Linux/macOS: run `./03-keywords_and_variables.sh`
+  - Linux/macOS: run `./verify/03-keywords_and_variables.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
