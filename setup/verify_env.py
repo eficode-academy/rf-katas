@@ -4,9 +4,11 @@ import subprocess
 from pathlib import Path
 from pip._internal.utils.misc import get_installed_distributions
 
+SETUP_DIRECTORY = Path(__file__).resolve().parent
+
 IS_CHROME = False
 IS_FIREFOX = False
-SMOKE_TEST_SUITE = os.path.join(".", "setup", "verify_setup.robot")
+SMOKE_TEST_SUITE = os.path.join(SETUP_DIRECTORY, "verify_setup.robot")
 
 def get_pip_packages():
     pip_packages = []
@@ -26,7 +28,7 @@ def check_selenium_library_package():
     if not "robotframework-seleniumlibrary" in pip_packages:
         print("Install SeleniumLibrary: pip install robotframework-seleniumlibrary")
         sys.exit(1)
-    
+
 def check_rflint_package():
     pip_packages = get_pip_packages()
     if not "robotframework-lint" in pip_packages:
@@ -69,5 +71,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    
