@@ -1,2 +1,2 @@
-python setup/02-robot_syntax.py
+python ../setup/02-robot_syntax.py
 PAUSE

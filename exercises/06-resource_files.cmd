@@ -1,2 +1,2 @@
-python setup/06-resource_files.py
+python ../setup/06-resource_files.py
 PAUSE

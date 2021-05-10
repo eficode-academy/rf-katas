@@ -1,2 +1,2 @@
-python setup/verify_env.py
+python ../setup/verify_env.py
 PAUSE
