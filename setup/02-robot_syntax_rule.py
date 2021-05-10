@@ -1,4 +1,4 @@
-from rflint.common import SuiteRule, TestRule, ERROR
+from rflint.common import SuiteRule, TestRule, ERROR, WARNING
 
 MUST_KEYWORDS = [
         "Open Browser",
@@ -51,6 +51,18 @@ class TestCaseImplementation02(TestRule):
             report = True
         if report:
             self.report(test, default_message + ", expected one of: {}".format(", ".join(VERIFY_KEYWORDS)), test.linenumber)
+
+class TestCaseKeywordCases02(TestRule):
+    severity = WARNING
+
+    def apply(self, test):
+        default_message = "Did you find all keywords from seleniumlibrary documentation?"
+        report = False
+        for step in test.steps:
+            if len(step) > 1:
+                if step[1] != step[1].title():
+                    self.report(test, "Best practice is to Capitalize Keywords: " + step[1] , test.linenumber)
+
 
 class CheckTestCasesName02(SuiteRule):
 
