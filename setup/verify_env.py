@@ -44,12 +44,12 @@ def check_smoke_suite_location():
 
 def evaluate_environment():
     try:
-        subprocess.run(["robot", "-v", "BROWSER:ff", "-d", "setup", SMOKE_TEST_SUITE], check=True)
+        subprocess.run(["robot", "-v", "BROWSER:ff", "-d", SETUP_DIRECTORY, SMOKE_TEST_SUITE], check=True)
         IS_FIREFOX = True
     except subprocess.CalledProcessError:
         IS_FIREFOX = False
     try:
-        subprocess.run(["robot", "-v", "BROWSER:gc", "-d", "setup", SMOKE_TEST_SUITE], check=True)
+        subprocess.run(["robot", "-v", "BROWSER:gc", "-d", SETUP_DIRECTORY, SMOKE_TEST_SUITE], check=True)
         IS_CHROME = True
     except subprocess.CalledProcessError:
         IS_CHROME = False
