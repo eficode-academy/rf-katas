@@ -13,6 +13,8 @@ def check_content():
     is_url = False
     is_password = False
     is_username = False
+    is_login = False
+    is_welcome = False
     data = None
     with open(LOGIN_ROBOT_FILE, "r") as f:
         data = f.readlines()
@@ -26,10 +28,14 @@ def check_content():
             is_username = True
         elif "password" in lowered_line:
             is_password = True
-    if is_open_browser and is_url and is_password and is_username:
+        elif "click" in lowered_line or "login" in lowered_line:
+            is_login = True
+        elif "welcome" in lowered_line:
+            is_welcome = True
+    if is_open_browser and is_url and is_password and is_username and is_login and is_welcome:
         print("Ready to proceed!")
     else:
-        print("Not quite there yet! Did remember browser, username, password or perhaps missing url?")
+        print("Not quite there yet! Did remember browser, username, password or perhaps missing url? Do you verify your login?")
         sys.exit(1)
 
 def main():
