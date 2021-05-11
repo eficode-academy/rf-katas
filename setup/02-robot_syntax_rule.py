@@ -61,7 +61,7 @@ class TestCaseKeywordCases02(TestRule):
         for step in test.steps:
             if len(step) > 1:
                 if step[1] != step[1].title():
-                    self.report(test, "Best practice is to Capitalize Keywords: " + step[1] , test.linenumber)
+                    self.report(test, "Best practice is to Capitalize All The Words In A Keyword: " + step[1] , test.linenumber)
 
 
 class CheckTestCasesName02(SuiteRule):
