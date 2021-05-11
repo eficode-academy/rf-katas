@@ -5,9 +5,10 @@ window open. Wouldn't it be nice if the test automatically closes the browser af
 Robot Framework provides setups and teardowns to fix that issue:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-setup-and-teardown
 
-From our previous exercises our `login.robot` should look something like this:
+<details>
+    <summary>From our previous exercises our `login.robot` should look something like this</summary>
 
-```
+```robot
 *** Settings ***
 Library    SeleniumLibrary
 
@@ -45,6 +46,8 @@ Verify That Welcome Page Is Visible
     Location Should Be    ${URL}/welcome.html
     Title Should Be    Welcome Page
 ```
+
+</details>
 
 Add `Close Browser` (https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
 after the last keyword `Verify That Welcome Page is Visible` has been executed. When you run your test,

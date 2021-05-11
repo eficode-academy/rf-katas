@@ -12,7 +12,8 @@ http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#cre
 With user defined keywords we can create abstraction layer when needed.
 A general rule of thumb is that library and resource keywords are "general sounding" ones and with user keywords in test suite you can create needed abstraction layer based on the test context.
 
-From previous exercises we should have something like this in our `robot/login.robot`:
+<details>
+    <summary>From previous exercises we should have something like this in our `robot/login.robot`</summary>
 
 ```
 *** Settings ***
@@ -29,6 +30,8 @@ Welcome Page Should Be Visible After Successful Login
     Location Should Be    http://localhost:7272/welcome.html
     Title Should Be    Welcome Page
 ```
+
+</details>
 
 This test is technically correct, but can be quite hard to read if you don't know e.g. what is HTML attribute `id`.
 

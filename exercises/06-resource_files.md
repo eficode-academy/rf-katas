@@ -3,7 +3,8 @@
 In the previous exercise you might have ended up copy-pasting the
 existing test case from `login.robot` test suite to `invalid_login.robot`.
 
-So your `invalid_login.robot` could look something like this:
+<details>
+    <summary>So your `invalid_login.robot` could look something like this</summary>
 
 ```
 *** Settings ***
@@ -45,6 +46,8 @@ Verify That Error Page Is Visible
     Location Should Be    ${URL}/error.html
     Title Should Be    Error Page
 ```
+
+</details>
 
 As you noticed, we now have duplication in keywords like `Open Browser To Login Page` and `Submit Login Form`.
 

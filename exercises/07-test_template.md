@@ -1,6 +1,7 @@
 # Test templates
 
-After the previous exercise our `invalid_login.robot` should look something like this:
+<details>
+    </summary>After the previous exercise our `invalid_login.robot` should look something like this</summary>
 
 ```
 *** Settings ***
@@ -42,6 +43,8 @@ Verify That Error Page Is Visible
     Location Should Be    ${URL}/error.html
     Title Should Be    Error Page
 ```
+
+</details>
 
 So, basically what most of us did was copy-pasted the first test several times, changed the test names
 and changed the entered usernames and passwords. The tests do test different things and work well, but it

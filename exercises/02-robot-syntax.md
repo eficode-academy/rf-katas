@@ -1,6 +1,7 @@
 # Robot Syntax
 
-In the previous exercise we created `robot/login.robot` file and the content was most likely something like this:
+<details>
+    <summary>In the previous exercise we created `robot/login.robot` file and the content was most likely something like this</summary>
 
 ```
 Open browser
@@ -10,6 +11,8 @@ Enter password
 Submit login form
 Check that welcome page text is visible
 ```
+
+</details>
 
 If you now run command `robot robot/login.robot` you should get something like this:
 
