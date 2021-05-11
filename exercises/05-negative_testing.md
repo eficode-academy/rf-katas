@@ -18,10 +18,28 @@ Create a test case `Error Page Should Be Visible After Incorrect Login` into the
 
 Run the test with `robot robot/invalid_login.robot` command to verify the results.
 
+In this exercise the task is to only test one of the six combinations you thought of earlier. However,
+there are at least six possible combinations. Creating a new keyword for all those cases is kind of a
+waste, since the only changing part is the input. This is were keyword arguments come into play. Keyword
+arguments work just like your variables in the `*** Variables ***` table, except that by best practice
+keyword arguments are implemented lower case.
+
+Define keyword arguments to `Enter Username` and `Enter Password`
+by putting `[Arguments]` after the keyword name, just like you did with test
+`[Setup]` and `[Teardown]` for a test case in [exercise 04](./04-setups_and_teardowns.md). After these
+you need four spaces and the name of your argument, so in the end you will have something like this:
+
+```
+Enter Username
+    [Arguments]    ${username}
+```
+
+Also remember to change the input value in the `Input Text` keyword to use the `${username}` variable
+instead of a hard-coded value.
+
 When the test passes run the following command to ensure that changes are done in right manner run:
 
   - Windows: double click the `05-negative_testing.cmd`
   - Linux/macOS: run `./verify/05-negative_testing.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
-
