@@ -14,7 +14,10 @@ After you've finished your list let's start testing one of those.
 
 Create a new file `invalid_login.robot` under `robot` folder.
 
-Create a test case `Error Page Should Be Visible After Incorrect Login` into the `invalid_login.robot`. Remember to create keyword `Verify That Error Page Is Visible`.
+Create a test case `Error Page Should Be Visible After Incorrect Login` into the `invalid_login.robot`.
+Copy-paste the `Open Browser To Login Page`, `Enter Username`, `Enter Password`, and `Submit Login Form`
+keywords from `login.robot` into `invalid_login.robot`.
+Remember to also create a keyword `Verify That Error Page Is Visible`.
 
 Run the test with `robot robot/invalid_login.robot` command to verify the results.
 
