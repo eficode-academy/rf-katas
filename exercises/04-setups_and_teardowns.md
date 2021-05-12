@@ -6,7 +6,7 @@ Robot Framework provides setups and teardowns to fix that issue:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-setup-and-teardown
 
 <details>
-    <summary>From our previous exercises our `login.robot` should look something like this</summary>
+    <summary>From our previous exercises our <code>login.robot</code> should look something like this</summary>
 
 ```robot
 *** Settings ***

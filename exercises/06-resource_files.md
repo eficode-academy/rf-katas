@@ -4,7 +4,7 @@ In the previous exercise you might have ended up copy-pasting the
 existing test case from `login.robot` test suite to `invalid_login.robot`.
 
 <details>
-    <summary>So your `invalid_login.robot` could look something like this</summary>
+    <summary>So your <code>invalid_login.robot</code> could look something like this</summary>
 
 ```
 *** Settings ***

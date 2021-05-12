@@ -1,7 +1,7 @@
 # Robot Syntax
 
 <details>
-    <summary>In the previous exercise we created `robot/login.robot` file and the content was most likely something like this</summary>
+    <summary>In the previous exercise we created <code>robot/login.robot</code> file and the content was most likely something like this</summary>
 
 ```
 Open browser

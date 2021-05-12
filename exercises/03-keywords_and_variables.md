@@ -13,7 +13,7 @@ With user defined keywords we can create abstraction layer when needed.
 A general rule of thumb is that library and resource keywords are "general sounding" ones and with user keywords in test suite you can create needed abstraction layer based on the test context.
 
 <details>
-    <summary>From previous exercises we should have something like this in our `robot/login.robot`</summary>
+    <summary>From previous exercises we should have something like this in our <code>robot/login.robot</code></summary>
 
 ```
 *** Settings ***
