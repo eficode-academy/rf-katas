@@ -33,23 +33,23 @@ class TestCaseImplementation05(TestRule):
         for step in test.steps:
             if len(step) > 1:
                 test_steps.append(normalize(step[1]))
-        is_report = False
+        has_failures = False
         if len(test_steps) == 5 and test_steps != [SETUP_KEYWORD] + MUST_KEYWORDS:
-            is_report = True
+            has_failures = True
         elif len(test_steps) == 4:
             has_setup = False
             setup = list(filter(lambda s: "test setup" in str(s).lower(), test.parent.settings))[0]
-            if SETUP_KEYWORD.lower() in str(setup).lower() and not setup.is_comment():
+            if SETUP_KEYWORD in normalize(str(setup)) and not setup.is_comment():
                 has_setup = True
             if not has_setup:
                 for setting in test.settings:
-                    s = str(setting).lower()
-                    if SETUP_KEYWORD.lower() in s and "[setup]" in s:
+                    s = normalize(str(setting))
+                    if SETUP_KEYWORD in s and "[Setup]" in s:
                         has_setup = True
                         break
 
             if not has_setup:
-                is_report = True
+                has_failures = True
 
-        if is_report:
+        if has_failures:
             self.report(test, default_message, test.linenumber)

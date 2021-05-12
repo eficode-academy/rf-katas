@@ -1,5 +1,7 @@
 from rflint.common import KeywordRule, SuiteRule, TestRule, ERROR
 
+from static import normalize
+
 ALLOWED_KEYWORDS = [
     'Template Error Page Is Visible When Using Incorrect Credentials',
     'Verify That Error Page Is Visible'
@@ -14,7 +16,7 @@ class TestTemplateInUse(SuiteRule):
         for setting in suite.settings:
             if setting[0].lower() == "test template":
                 is_test_template = True
-                if setting[1].lower().title()  != ALLOWED_KEYWORDS[0]:
+                if normalize(setting[1])  != ALLOWED_KEYWORDS[0]:
                     self.report(suite, "Did you add correct keyword for test template?, expected: {}".format(ALLOWED_KEYWORDS[1]), 0)
         if not is_test_template:
             self.report(suite, "Did you remember to add Test Template option?", 0)
@@ -40,10 +42,10 @@ class TestTemplateImplementation(KeywordRule):
     ]
 
     def apply(self, keyword):
-        if keyword.name.lower().title() == ALLOWED_KEYWORDS[0]:
+        if normalize(keyword.name) == ALLOWED_KEYWORDS[0]:
             steps = []
             for step in keyword.steps:
                 if len(step) > 1:
-                    steps.append(step[1].lower().title())
+                    steps.append(normalize(step[1]))
             if steps != self.ALLOWED_TEMPLATE_STEPS:
                 self.report(keyword, "Did you implement all needed steps for template?, expected: {}".format(", ".join(self.ALLOWED_TEMPLATE_STEPS)), keyword.linenumber)
