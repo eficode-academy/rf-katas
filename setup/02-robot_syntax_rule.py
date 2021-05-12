@@ -21,11 +21,12 @@ VERIFY_KEYWORDS = [
         "Wait Until Page Contains Element"
 ]
 
+DEFAULT_MESSAGE = "Did you find all keywords from SeleniumLibrary documentation?"
+
 class TestCaseImplementation02(TestRule):
     severity = ERROR
 
     def apply(self, test):
-        default_message = "Did you find all keywords from SeleniumLibrary documentation?"
         report = False
         test_steps = []
         for step in test.steps:
@@ -36,25 +37,24 @@ class TestCaseImplementation02(TestRule):
             if not normalize(keyword) in test_steps:
                 report = True
         if report:
-            self.report(test, default_message + ", expected: {}".format(", ".join(MUST_KEYWORDS)), test.linenumber)
+            self.report(test, DEFAULT_MESSAGE + ", expected: {}".format(", ".join(MUST_KEYWORDS)), test.linenumber)
 
         for keyword in test_steps:
             if normalize(keyword) in LOGIN_KEYWORDS:
                 break
         else:
-            self.report(test, default_message + ", expected one of: {}".format(", ".join(LOGIN_KEYWORDS)), test.linenumber)
+            self.report(test, DEFAULT_MESSAGE + ", expected one of: {}".format(", ".join(LOGIN_KEYWORDS)), test.linenumber)
 
         for keyword in test_steps:
             if normalize(keyword) in VERIFY_KEYWORDS:
                 break
         else:
-            self.report(test, default_message + ", expected one of: {}".format(", ".join(VERIFY_KEYWORDS)), test.linenumber)
+            self.report(test, DEFAULT_MESSAGE + ", expected one of: {}".format(", ".join(VERIFY_KEYWORDS)), test.linenumber)
 
 class TestCaseKeywordCases02(TestRule):
     severity = WARNING
 
     def apply(self, test):
-        default_message = "Did you find all keywords from seleniumlibrary documentation?"
         report = False
         for step in test.steps:
             if len(step) > 1:
@@ -63,11 +63,10 @@ class TestCaseKeywordCases02(TestRule):
 
 
 class CheckTestCasesName02(SuiteRule):
-
     severity = ERROR
 
     def apply(self, suite):
         expected_name = "Welcome Page Should Be Visible After Successful Login"
         for testcase in suite.testcases:
-            if testcase.name.lower() != expected_name.lower():
+            if normalize(testcase.name) != expected_name:
                 self.report(suite, "Check test case name: {}, expected: {}".format(testcase.name, expected_name), 0)
