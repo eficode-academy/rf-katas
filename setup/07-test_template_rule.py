@@ -43,9 +43,7 @@ class TestTemplateImplementation(KeywordRule):
         if keyword.name.lower().title() == ALLOWED_KEYWORDS[0]:
             steps = []
             for step in keyword.steps:
-                try:
+                if len(step) > 1:
                     steps.append(step[1].lower().title())
-                except IndexError:
-                    pass
             if steps != self.ALLOWED_TEMPLATE_STEPS:
                 self.report(keyword, "Did you implement all needed steps for template?, expected: {}".format(", ".join(self.ALLOWED_TEMPLATE_STEPS)), keyword.linenumber)

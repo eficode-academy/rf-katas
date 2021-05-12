@@ -15,7 +15,8 @@ class KeywordImplementationRule05(KeywordRule):
 
     def apply(self, keyword):
         report = False
-        if keyword.name == MUST_KEYWORDS[0] or keyword.name == MUST_KEYWORDS[1]:
+        name = keyword.name.lower().title()
+        if name == MUST_KEYWORDS[0] or name == MUST_KEYWORDS[1]:
             if len(keyword.settings) == 0 or (not "[Arguments]" in keyword.settings[0]):
                 report = True
         if report:
