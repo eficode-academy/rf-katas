@@ -1,7 +1,7 @@
 # Test templates
 
 <details>
-    </summary>After the previous exercise our <code>invalid_login.robot</code>
+    <summary>After the previous exercise our <code>invalid_login.robot</code>
     should look something like this</summary>
 
 ```
