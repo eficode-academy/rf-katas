@@ -24,9 +24,6 @@ VERIFY_KEYWORDS = [
 class TestCaseImplementation02(TestRule):
     severity = ERROR
 
-    def normalize(self, kw):
-        return kw.strip().title()
-
     def apply(self, test):
         default_message = "Did you find all keywords from SeleniumLibrary documentation?"
         report = False
