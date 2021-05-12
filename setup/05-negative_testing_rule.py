@@ -1,4 +1,5 @@
 from rflint.common import KeywordRule, SuiteRule, TestRule, ERROR
+from static import normalize
 
 MUST_KEYWORDS = [
     "Enter Username",
@@ -15,7 +16,7 @@ class KeywordImplementationRule05(KeywordRule):
 
     def apply(self, keyword):
         report = False
-        name = keyword.name.lower().title()
+        name = normalize(keyword.name)
         if name == MUST_KEYWORDS[0] or name == MUST_KEYWORDS[1]:
             if len(keyword.settings) == 0 or (not "[Arguments]" in keyword.settings[0]):
                 report = True
@@ -31,7 +32,7 @@ class TestCaseImplementation05(TestRule):
         test_steps = []
         for step in test.steps:
             if len(step) > 1:
-                test_steps.append(step[1].lower().title())
+                test_steps.append(normalize(step[1]))
         is_report = False
         if len(test_steps) == 5 and test_steps != [SETUP_KEYWORD] + MUST_KEYWORDS:
             is_report = True
