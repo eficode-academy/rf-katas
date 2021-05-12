@@ -1,5 +1,6 @@
-from rflint.common import KeywordRule, SuiteRule, TestRule, ERROR
+from rflint.common import KeywordRule, SuiteRule, TestRule, GeneralRule, ERROR, WARNING
 from rflint.parser import SettingTable
+from static import normalize
 
 ALLOWED_KEYWORDS = [
     "Open Browser To Login Page",
@@ -13,7 +14,7 @@ class InvalidKeywordName(KeywordRule):
     severity = ERROR
 
     def apply(self, keyword):
-        if not keyword.name in ALLOWED_KEYWORDS:
+        if not normalize(keyword.name) in ALLOWED_KEYWORDS:
             self.report(keyword, "Keyword {} not allowed in {}".format(keyword.name, ", ".join(ALLOWED_KEYWORDS)), keyword.linenumber)
 
 class KeywordImplementation(KeywordRule):
@@ -21,11 +22,27 @@ class KeywordImplementation(KeywordRule):
 
     def apply(self, keyword):
         report = False
-        if keyword.name == ALLOWED_KEYWORDS[0]:
-            if not "${URL}" in keyword.steps[0][2]:
+        if normalize(keyword.name) == ALLOWED_KEYWORDS[0]:
+            if not "${URL}" in keyword.steps[0][2].upper():
                 report = True
         if report:
             self.report(keyword, "Do you have URL variable in place? Check keyword: {}".format(ALLOWED_KEYWORDS[0]), keyword.linenumber+1)
+
+class KeywordsShouldStartWithCapitalLetter(KeywordRule):
+    severity = WARNING
+
+    def apply(self, keyword):
+        if not keyword.name == normalize(keyword.name):
+            self.report(keyword, "Best practice is to Capitalize All The Words In A Keyword: " + keyword.name, keyword.linenumber)
+
+class GlobalVariablesShouldBeUpperCase(GeneralRule):
+    severity = WARNING
+
+    def apply(self, robot_file):
+        table = list(filter(lambda t: t.name.lower() == "variables", robot_file.tables))[0]
+        for row in table.rows:
+            if row.cells[0] != row.cells[0].upper():
+                self.report(robot_file, 'Variables in the "Variables" table should be UPPER CASE: ' + row.cells[0], row.linenumber)
 
 class TestCaseImplementation(TestRule):
     severity = ERROR
@@ -34,6 +51,6 @@ class TestCaseImplementation(TestRule):
         test_steps = []
         for step in test.steps:
             if len(step) > 1:
-                test_steps.append(step[1])
+                test_steps.append(normalize(step[1]))
         if test_steps != ALLOWED_KEYWORDS:
             self.report(test, "Check that you've refactored test case {} in right manner, expected: {}".format(test.name, ", ".join(ALLOWED_KEYWORDS)), test.linenumber)

@@ -9,7 +9,7 @@ Let us first go through our System Under Testing (SUT) before we proceed.
 Our system under testing is simple web application that is running in localhost:7272 address.
 
 Features:
-  - index page contains login form 
+  - index page contains login form
     - username: demo
     - password: mode
     - submit login form button
@@ -30,6 +30,6 @@ Write needed steps line by line that you would perform if you would manually tes
 After you've added steps that you think are needed to manually test login feature run:
 
   - Windows: double click `01-manual_testing.cmd`
-  - Linux/macOS: `./01-manual_testing.sh`
+  - Linux/macOS: `./verify/01-manual_testing.sh`
 
 If the output is `Ready to proceed!` then you're good to go! Otherwise the check the output that what is missing?

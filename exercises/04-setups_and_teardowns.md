@@ -5,9 +5,10 @@ window open. Wouldn't it be nice if the test automatically closes the browser af
 Robot Framework provides setups and teardowns to fix that issue:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-setup-and-teardown
 
-From our previous exercises our `login.robot` should look something like this:
+<details>
+    <summary>From our previous exercises our <code>login.robot</code> should look something like this</summary>
 
-```
+```robot
 *** Settings ***
 Library    SeleniumLibrary
 
@@ -46,6 +47,8 @@ Verify That Welcome Page Is Visible
     Title Should Be    Welcome Page
 ```
 
+</details>
+
 Add `Close Browser` (https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
 after the last keyword `Verify That Welcome Page is Visible` has been executed. When you run your test,
 the browser should close automatically and the test still passes.
@@ -63,7 +66,7 @@ are after the failing keyword aren't executed anymore. Close the browser manuall
 
 Let's modify our test case a bit and let's add a `Teardown` into our test case. Add `[Teardown]` before
 `Close Browser` (on the same line, remember to leave 4 spaces between the two), so that our test case
-looks like this: 
+looks like this:
 
 ```
 Welcome Page Should Be Visible After Sucecsfull Login
@@ -133,6 +136,6 @@ That change indicates the test case reader that there is some precondition befor
 To ensure that changes are done in right manner run:
 
   - Windows: double click the `04-setups_and_teardowns.cmd`
-  - Linux/macOS: run `./04-setups_and_teardowns.sh`
+  - Linux/macOS: run `./verify/04-setups_and_teardowns.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.

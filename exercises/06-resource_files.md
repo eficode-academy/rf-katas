@@ -1,9 +1,10 @@
 # Resource files
 
-In the previous exercise you might have ended up copy-pasting the 
+In the previous exercise you might have ended up copy-pasting the
 existing test case from `login.robot` test suite to `invalid_login.robot`.
 
-So your `invalid_login.robot` could look something like this:
+<details>
+    <summary>So your <code>invalid_login.robot</code> could look something like this</summary>
 
 ```
 *** Settings ***
@@ -46,6 +47,8 @@ Verify That Error Page Is Visible
     Title Should Be    Error Page
 ```
 
+</details>
+
 As you noticed, we now have duplication in keywords like `Open Browser To Login Page` and `Submit Login Form`.
 
 Usually we don't want to repeat ourselves that much, since it makes maintenance much harder.
@@ -65,9 +68,9 @@ Now run the command `robot robot` to run all suites and you may notice some erro
 
 ```
 =============================================================================
-Login & Invalid Login                                                         
+Login & Invalid Login
 ==============================================================================
-Login & Invalid Login.Login                                                   
+Login & Invalid Login.Login
 ==============================================================================
 Welcome Page Should Be Visible After Successful Login                 | FAIL |
 No keyword with name 'Open Browser To Login Page' found.
@@ -80,7 +83,7 @@ Login & Invalid Login.Login                                           | FAIL |
 2 critical tests, 0 passed, 2 failed
 2 tests total, 0 passed, 2 failed
 ==============================================================================
-Login & Invalid Login.Invalid Login                                           
+Login & Invalid Login.Invalid Login
 ==============================================================================
 Error Page Should Be Visible After Successful Login                   | FAIL |
 No keyword with name 'Open Browser To Login Page' found.
@@ -120,6 +123,6 @@ Create 2 more test cases that uses 2 different combination of invalid credential
 When the tests pass run the following command to ensure that changes are done in right manner run:
 
   - Windows: double click the `06-resource_files.cmd`
-  - Linux/macOS: run `./06-resource_files.sh`
+  - Linux/macOS: run `./verify/06-resource_files.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
