@@ -1,16 +1,16 @@
 # Negative testing
 
-So far we have tested only "happy cases", which are test cases that proves that the feature is working as
-intended, when the user knows what they should do.
+So far we have tested only "happy cases", which are test cases that prove the feature is working as
+intended: when the user knows what they should do.
 
-Let's focus on negative testing, which means testing the application behaviour when the user makes an error.
-In this case it means that the user types incorrect credentials.
+Let's focus on negative testing, which means testing the application behaves correctly
+when the user makes an error. In this case it means that the user types incorrect credentials.
 
 Think about different ways to mistype username and password combinations and write them on some file. Have at least 6 different combinations of incorrect credentials.
 
 Checkout also Robot Framework built-in variables: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#built-in-variables
 
-After you've finished your list let's start testing one of those.
+After you've finished your list let's start implementing one of those.
 
 Create a new file `invalid_login.robot` under `robot` folder.
 
