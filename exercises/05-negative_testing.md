@@ -16,21 +16,22 @@ Create a new file `invalid_login.robot` under `robot` folder.
 
 Create a test case `Error Page Should Be Visible After Incorrect Login` into the `invalid_login.robot`.
 Copy-paste the `Open Browser To Login Page`, `Enter Username`, `Enter Password`, and `Submit Login Form`
-keywords from `login.robot` into `invalid_login.robot`.
-Remember to also create a keyword `Verify That Error Page Is Visible`.
+keywords from `login.robot` into `invalid_login.robot`. Normally we would not copy-paste keywords around;
+we will see later on how to achieve this while keeping ourselves [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+Remember to also create the keyword `Verify That Error Page Is Visible`.
 
 Run the test with `robot robot/invalid_login.robot` command to verify the results.
 
 In this exercise the task is to only test one of the six combinations you thought of earlier. However,
-there are at least six possible combinations. Creating a new keyword for all those cases is kind of a
-waste, since the only changing part is the input. This is were keyword arguments come into play. Keyword
+there is at least six possible combinations. Creating a new keyword for all those cases is kind of uncessary
+repetition, since the only changing part is the input. This is were keyword arguments come into play. Keyword
 arguments work just like your variables in the `*** Variables ***` table, except that by best practice
-keyword arguments are implemented lower case.
+keyword arguments are written with lower case.
 
 Define keyword arguments to `Enter Username` and `Enter Password`
 by putting `[Arguments]` after the keyword name, just like you did with test
-`[Setup]` and `[Teardown]` for a test case in [exercise 04](./04-setups_and_teardowns.md). After these
-you need four spaces and the name of your argument, so in the end you will have something like this:
+`[Setup]` and `[Teardown]` for a test case in [exercise 04](./04-setups_and_teardowns.md). After these steps,
+you need four spaces and the name of your argument, resulting in:
 
 ```
 Enter Username
