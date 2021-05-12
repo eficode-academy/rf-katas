@@ -51,6 +51,6 @@ class TestCaseImplementation(TestRule):
         test_steps = []
         for step in test.steps:
             if len(step) > 1:
-                test_steps.append(step[1].title())
+                test_steps.append(normalize(step[1]))
         if test_steps != ALLOWED_KEYWORDS:
             self.report(test, "Check that you've refactored test case {} in right manner, expected: {}".format(test.name, ", ".join(ALLOWED_KEYWORDS)), test.linenumber)
