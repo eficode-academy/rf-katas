@@ -1,7 +1,8 @@
 # Test templates
 
 <details>
-    </summary>After the previous exercise our `invalid_login.robot` should look something like this</summary>
+    </summary>After the previous exercise our <code>invalid_login.robot</code>
+    should look something like this</summary>
 
 ```
 *** Settings ***
