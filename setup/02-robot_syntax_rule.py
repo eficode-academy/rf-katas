@@ -9,7 +9,8 @@ MUST_KEYWORDS = [
 
 LOGIN_KEYWORDS = [
         "Click Element",
-        "Click Button"
+        "Click Button",
+        "Submit Form"
 ]
 
 VERIFY_KEYWORDS = [
