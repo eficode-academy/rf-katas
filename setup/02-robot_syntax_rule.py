@@ -1,4 +1,5 @@
 from rflint.common import SuiteRule, TestRule, ERROR, WARNING
+from static import normalize
 
 MUST_KEYWORDS = [
         "Open Browser",
@@ -31,22 +32,22 @@ class TestCaseImplementation02(TestRule):
         test_steps = []
         for step in test.steps:
             if len(step) > 1:
-                test_steps.append(self.normalize(step[1]))
+                test_steps.append(normalize(step[1]))
 
         for keyword in MUST_KEYWORDS:
-            if not self.normalize(keyword) in test_steps:
+            if not normalize(keyword) in test_steps:
                 report = True
         if report:
             self.report(test, default_message + ", expected: {}".format(", ".join(MUST_KEYWORDS)), test.linenumber)
 
         for keyword in test_steps:
-            if self.normalize(keyword) in LOGIN_KEYWORDS:
+            if normalize(keyword) in LOGIN_KEYWORDS:
                 break
         else:
             self.report(test, default_message + ", expected one of: {}".format(", ".join(LOGIN_KEYWORDS)), test.linenumber)
 
         for keyword in test_steps:
-            if self.normalize(keyword) in VERIFY_KEYWORDS:
+            if normalize(keyword) in VERIFY_KEYWORDS:
                 break
         else:
             self.report(test, default_message + ", expected one of: {}".format(", ".join(VERIFY_KEYWORDS)), test.linenumber)
@@ -59,7 +60,7 @@ class TestCaseKeywordCases02(TestRule):
         report = False
         for step in test.steps:
             if len(step) > 1:
-                if step[1] != step[1].title():
+                if step[1] != normalize(step[1]):
                     self.report(test, "Best practice is to Capitalize All The Words In A Keyword: " + step[1] , test.linenumber)
 
 
