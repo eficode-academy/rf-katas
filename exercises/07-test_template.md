@@ -134,6 +134,6 @@ Now let's create 4 more test cases. Just add new line <name of the test case> 4 
 Once you've implemented all 5 test cases run:
 
   - Windows: double click the `07-test_template.cmd`
-  - Linux/macOS: run `./verify/07-test_template.sh`
+  - Linux/macOS: run `./exercises/verify/07-test_template.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.

@@ -198,6 +198,6 @@ Login                                                                 | PASS |
 After you've made the test pass, ensure that it's done with right manner by running:
 
   - Windows: double click `02-robot_syntax.cmd`
-  - Linux/macOS: run `./verify/02-robot_syntax.sh`
+  - Linux/macOS: run `./exercises/verify/02-robot_syntax.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
