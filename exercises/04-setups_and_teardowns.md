@@ -136,6 +136,6 @@ That change indicates the test case reader that there is some precondition befor
 To ensure that changes are done in right manner run:
 
   - Windows: double click the `04-setups_and_teardowns.cmd`
-  - Linux/macOS: run `./verify/04-setups_and_teardowns.sh`
+  - Linux/macOS: run `./exercises/verify/04-setups_and_teardowns.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.

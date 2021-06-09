@@ -12,7 +12,7 @@ class TestSettingsCheck(TestRule):
         settings = []
         expected_settings = [CLOSE_BROWSER]
         for setting in test.settings:
-                settings.append(normalize(setting[2])
+            settings.append(normalize(setting[2]))
         if normalize(test.name) == "Welcome Page Should Be Visible After Successful Login":
             if CLOSE_BROWSER in settings:
                 report = False

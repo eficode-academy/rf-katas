@@ -123,6 +123,6 @@ Create 2 more test cases that uses 2 different combination of invalid credential
 When the tests pass run the following command to ensure that changes are done in right manner run:
 
   - Windows: double click the `06-resource_files.cmd`
-  - Linux/macOS: run `./verify/06-resource_files.sh`
+  - Linux/macOS: run `./exercises/verify/06-resource_files.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
