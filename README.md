@@ -18,7 +18,7 @@ In this series of exercises we're going to run several automated tests againts w
        -  `python server/server.py`
 
 Recommendations:
-  - In order to make installing with pip easier, user virtualenv (https://virtualenv.pypa.io/en/latest/)
+  - In order to make installing with pip easier, use virtualenv (https://virtualenv.pypa.io/en/latest/)
     - Short instruction to virtualenv use
     ```
     pip install virtualenv --user
@@ -31,8 +31,8 @@ Recommendations:
     webdrivermanager firefox
     webdrivermanager chrome
     ```
-
-Protip: Add the chromedriver or geckodriver (after download) to a location that is in PATH environment variable. To see what folders are included you can use
+    
+Protip (if not using webdrivermanager): Add the chromedriver or geckodriver (after download) to a location that is in PATH environment variable. To see what folders are included you can use
   - MacOS/Linux: in terminal run command: `echo $PATH`
   - Windows:
     - in Command Prompt run command: `echo %PATH`
