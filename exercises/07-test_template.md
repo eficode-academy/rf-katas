@@ -47,23 +47,22 @@ Verify That Error Page Is Visible
 
 </details>
 
-So, basically what most of us did was copy-pasted the first test several times, changed the test names
-and changed the entered usernames and passwords. The tests do test different things and work well, but it
+So, basically what most of us did was copy-paste the first test several times, change the test names
+and change the entered user names and passwords. The tests do test different things and work well, but it
 doesn't really make sense to copy-paste several lines and modify 2 parameters. Instead, we should use
 test templates: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-templates
 
 So far we've been doing so-called workflow tests. Test templates are so-called data driven tests, which are
-usable when you need to run the same test multiple times and need to modify only a couple of arguments for
-each test.
+applicable when you need to run the same test, multiple times, every time with a couple of slightly altered arguments.
 
-Let's get started. Rename the first test case `Template Error Page Is Visible When Using Incorrect Credentials`
+Let's get started. Rename the first test case to `Template Error Page Is Visible When Using Incorrect Credentials`
 and move it from the `Test Cases` table under the `Keywords` table.
 
 Notice also that we have `[Teardown]` after every test separately. We can get rid of those by adding `Test Teardown`
 into our `Settings` table. Our `Template Error Page Is Visible When Using Incorrect Credentials` keyword also
 starts with `Open Browser to Login Page`, which is repeated in every test and it's not really part of the test. We
 can add a `Test Setup` into our `Settings` table as well. After making those changes we can delete those lines
-from `Error Page Is Visible When Using Incorrect Credentials`.
+from `Template Error Page Is Visible When Using Incorrect Credentials`.
 
 Also remember to add arguments for `Template Error Page Is Visible When Using Incorrect Credentials`.
 
@@ -79,7 +78,7 @@ Test Setup    Open Browser To Login Page
 Test Teardown    Close Browser
 ```
 
-And `Keywords` table:
+And `Keywords` table like this:
 
 ```
 *** Keywords ***

@@ -1,10 +1,10 @@
 # Keywords and variables
 
-One of the most powerful things that Robot Framework can do is to provide capability to write test cases
-with natural language. In an ideal world other people are also interested on the automated test case results and
+One of the most powerful things that Robot Framework can do is to provide the capability to write test cases
+using natural language. In an ideal world, it is not just people who write those tests, but also other people are interested in the automated test case results, including
 how, where, and when they are run.
 
-This can be achieved by using user defined keywords:
+This can be made possible by using user defined keywords:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords
 
 ## User defined keywords
@@ -62,9 +62,9 @@ After the possible fixes create the following keywords:
   - `Submit Login Form`
   - `Verify That Welcome Page Is Visible`
 
-*Pro tip 1* A user defined keyword can run multiple keywords, just like a test case can have multiple steps.
+*Pro tip 1* One user defined keyword can contain multiple keywords, just like a test case can have multiple steps. This can be used to shorten test cases by hiding long chains of actions inside aptly named keywords.
 
-*Pro tip 2* Check out also arguments for user keywords: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#user-keyword-arguments
+*Pro tip 2* User defined keywords can become more versatile, through the use of arguments: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#user-keyword-arguments
 
 After you've defined and implemented the keywords your test case should look like this:
 
@@ -88,7 +88,7 @@ But hey! Doesn't our test case look nice and clean? With UTF-8 support you can w
 
 Robot Framework does support variables: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variables
 
-A benefit of using variables instead of hard coded values is to provide a single place where to change the value and then tests are working once again if nothing else has changed. This will increase the maintainability of the test cases.
+A benefit of using variables instead of hard coded values here and there, is to provide a single place where to change the value, when needed, which can return all the tests that use the variable back to working once again (if nothing else needs changing). This will increase the maintainability of the test cases.
 
 Let's modify our test to use variables.
 
@@ -103,8 +103,10 @@ ${VARIABLE_NAME}=    variable value
 
 The `=` is optional and can be removed if you don't want to use it. You still need to have at least 2 spaces
 (preferably at least 4) between `${VARIABLE_NAME}` and `variable value`. Also, variable names are completely
-case-insensitive, but the best practice is to define variables in the `Variables` table in ALL CAPS. This is
-purely to better distinguish the scope of variables (full caps for global, suite, and test variables and small
+case-insensitive. Robot also ignores spaces and `_` signs. This means that to robot these variables names:
+`${MYVARIABLE}`, `${MyVariable}`, `${MY VARIABLE}`, `${My_variable}`, and `${myvariable}` are actually all referring to the same variable.
+The recomended best practice is to define variables in the `*** Variables ***` table in ALL CAPS. This is
+purely to help everyone better distinguish the scope of variables (use upper case for global, suite, and test variables and lower
 case for keyword variables).
 
 Let's add our `Variables` table and `URL` as a variable.
@@ -116,7 +118,7 @@ ${URL}=    http://localhost:7272
 
 Now replace all the existing `http://localhost:7272` with `${URL}`.
 
-*Pro tip* You can combine variables with text like this `${URL}/` or `${URL}/welcome.html` without any concatenation or aritmethic operations.
+*Pro tip* You can combine variables with text like this `${URL}/` or `${URL}/welcome.html` without any concatenation or arithmetic operations.
 
 After you've made changes, run the `robot robot/login.robot` to verify that the test is still passing.
 

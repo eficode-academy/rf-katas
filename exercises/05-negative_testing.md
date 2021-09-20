@@ -3,10 +3,10 @@
 So far we have tested only "happy cases", which are test cases that prove the feature is working as
 intended: when the user knows what they should do.
 
-Let's focus on negative testing, which means testing the application behaves correctly
-when the user makes an error. In this case it means that the user types incorrect credentials.
+Let's focus on negative testing, which means testing that the application behaves correctly
+when the user makes an error. In this case it means that the user inputs incorrect credentials.
 
-Think about different ways to mistype username and password combinations and write them on some file. Have at least 6 different combinations of incorrect credentials.
+Think about different ways to mistype a combination of username and password, and write them in some file. Have at least 6 different combinations of incorrect credentials.
 
 Checkout also Robot Framework built-in variables: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#built-in-variables
 
@@ -23,10 +23,10 @@ Remember to also create the keyword `Verify That Error Page Is Visible`.
 Run the test with `robot robot/invalid_login.robot` command to verify the results.
 
 In this exercise the task is to only test one of the six combinations you thought of earlier. However,
-there is at least six possible combinations. Creating a new keyword for all those cases is kind of uncessary
-repetition, since the only changing part is the input. This is were keyword arguments come into play. Keyword
-arguments work just like your variables in the `*** Variables ***` table, except that by best practice
-keyword arguments are written with lower case.
+there are at least six possible combinations. Creating a new keyword for entering credentials in each and every of those cases is kind of unnecessary
+repetition, since the only changing part is the value being entered in the field. This is where keyword arguments should be used. Keyword
+arguments work just like your variables in the `*** Variables ***` table, except it is best practice
+keyword arguments to write them in lower case.
 
 Define keyword arguments to `Enter Username` and `Enter Password`
 by putting `[Arguments]` after the keyword name, just like you did with test
@@ -40,6 +40,9 @@ Enter Username
 
 Also remember to change the input value in the `Input Text` keyword to use the `${username}` variable
 instead of a hard-coded value.
+
+Note that if you have a `${USERNAME}` variable in the `*** Variables ***` table, and also use `${username}` as a keyword argument, then inside that keyword,
+all uses of both `${username}` and `${USERNAME}` will access only that keyword argument variable (in programming, this is called shadowing).
 
 When the test passes run the following command to ensure that changes are done in right manner run:
 

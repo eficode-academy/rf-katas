@@ -17,5 +17,6 @@ geckodriver-*.log
 .DS_Store
 
 #misc
-
+.idea/
 *.zip
+.*.swp

@@ -98,17 +98,19 @@ verify the login form visibility.
 Name the new test case `Login Form Should Be Visible After Successful Logout`.
 
 
-*Pro tip.* check the SeleniumLibrary keywords how to click links
+*Pro tip.* Check from the SeleniumLibrary keywords library how to click links.
 
 After implementing the new test case run both of the test cases with command
 `robot --randomize tests robot/login.robot` to make sure that they're not
-executed in order all the time. Check `robot -h` for more info.
+executed in order all the time. This helps to ensure that all tests pass regardless of
+what order they are ran in. Check `robot -h` for more info.
 
 You may have noticed that you just copy-pasted the `Welcome Page Should Be Visible After Successful Login`
 test steps, then proceeded to click the link and verify that login form is visible.
 
-To help people to understand what is the main point of the test case
-(also should be clear from the test case name) is to add a proper test setup for the test case.
+The new test case is now quite long, which makes it harder to understand. It should be easier to
+comprehend the main point of the test for people reading the steps (it also should be clear from the test case name).
+To improve the readability, add a proper test setup for the test case.
 
 To do that let's create new keyword called `Do Successful Login` with following content:
 
@@ -131,9 +133,9 @@ Login Form Should Be Visible After Successful Logout
     # rest of the implementation
 ```
 
-*Pro tip.*  `#` starts a comment line for Robot Framework
+*Pro tip.*  `#` starts a comment line for Robot Framework, its contents will not be executed.
 
-That change indicates the test case reader that there is some precondition before our actual test execution.
+Existence of `Setup` indicates to the test case reader, that there is some precondition before our actual test execution.
 
 To ensure that changes are done in right manner run:
 

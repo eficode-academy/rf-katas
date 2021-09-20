@@ -4,14 +4,14 @@ In this section we will install Robot Framework, needed test libraries and ensur
 
 ## Terminology
 
-In this section, you will see a lot of Python, operating system and Robot Framework related jargon which might be confusing to some. So before you go further, let's clarify some terminology that is used frequently in the Docker ecosystem.
+In this section, you will see a lot of Python, operating system and Robot Framework related jargon which might be confusing to some. So before you go further, let's clarify some terminology that is used frequently in this ecosystem.
 
 - *pip* - Python package manager, this is a tool that is needed to install Robot Framework and needed test libraries
-- *shell* - The shell is the command interpretor in an operating system such as Unix or GNU/Linux, it is a program that executes other programs
+- *shell* - The shell is the command interpreter in an operating system such as Unix or GNU/Linux, it is a program that executes other programs
 - *bat / batch file / cmd* - A batch file is a script file in DOS, OS/2 and Microsoft Windows. It consists of a series of commands to be executed by the command-line interpreter, stored in a plain text file.
 - *robot* - The command line tool that allows the user to run Robot Framework test cases and tasks
 - *test suite* - A Robot file that contains test cases
-- *keyword* - keyword is like a function that robot uses to execute steps
+- *keyword* - a component, similar to a function in programming, that robot uses to execute steps
 - *arguments* - Values that are given to keywords. Also known as parameters.
 
 ## Install robotframework
@@ -54,6 +54,6 @@ Verify setup by running:
 You should see Firefox and/or Chrome open to the test server for a few seconds then close down. Don't
 worry if only one browser opens, it's enough for the purpose of this training.
 
-If the output of the script is: `Setup in perfect condition!` then we're good to go.
+If the output of the script ends with: `Setup in perfect condition!` we're good to go.
 
-Otherwise, check the output and fix the missing packages or the webdriver is in the wrong place.
+Otherwise, check the output and fix the missing packages or place the webdriver in the correct location.
