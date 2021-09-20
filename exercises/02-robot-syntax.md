@@ -18,6 +18,10 @@ If you now run command `robot robot/login.robot` you should get something like t
 
 `[ ERROR ] Parsing 'robot/login.robot' failed: File has no tests or tasks.`
 
+or
+
+`[ ERROR ] Suite 'Login' contains no tests or tasks.`
+
 The reason is that this is not in Robot syntax.
 
 Check out Robot Framework user guide: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-data
@@ -29,10 +33,10 @@ Each table starts with `***` and ends with `***`.
 
 There are 5 types of tables:
 
-  - `*** Settings ***` - to define libraries, resources, suite/test setups, documentation etc. http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#id403
-  - `*** Variables ***` - to define suite level variables http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variable-table
+  - `*** Settings ***` - to define libraries, resources, suite/test setups, documentation etc. http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-available-settings-in-test-data
+  - `*** Variables ***` - to define suite level variables http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variable-section
   - `*** Keywords ***` - user defined keywords http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords
-  - `*** Test Cases ***` - All the suite (file) test cases goes below this one http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-table
+  - `*** Test Cases ***` - All the suite (file) test cases goes below this one http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-syntax
   - `*** Tasks ***` - http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-tasks
 
 Check the Robot Framework syntax guide for more details: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-data-syntax
@@ -124,7 +128,7 @@ will work "out of the box" without you having to worry about anything. However, 
 the SeleniumLibrary) are external libraries provided by the open source community and we need to tell Robot separately
 to use them.
 
-Check the library injection chapter from userguide: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries
+Check the library injection chapter from the user guide: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries
 
 So, in order to take SeleniumLibrary into use during runtime we need to add a `*** Settings ***` table and add
 the library definition there.
@@ -148,7 +152,9 @@ Login                                                                 | FAIL |
 ==============================================================================
 ```
 
-So now we need to add missing arguments for `Open Browser` keyword: https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser
+As the test starts, depending on the robotframework version, a default browser might open, but it will not show any page. This is because the keyword was called without arguments.
+
+So now we need to add the necessary arguments for `Open Browser` keyword: https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser
 
 Our `robot/login.robot` file look now something like this (note that all words were capitalized as recommended):
 

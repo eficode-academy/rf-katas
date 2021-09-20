@@ -2,7 +2,7 @@
 
 ## Requirements
 
-In this series of exercises we're going to run several automated tests againts web application. To do that we're going to need to have the following items installed:
+In this series of exercises we're going to run several automated tests against web application. To do that we're going to need to have the following items installed:
 
 - Python 3: https://www.python.org/downloads/
   - Remember to add Python folder to PATH environment variable.
