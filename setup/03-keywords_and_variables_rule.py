@@ -22,7 +22,7 @@ class KeywordImplementation(KeywordRule):
     def apply(self, keyword):
         report = False
         if normalize(keyword.name) == ALLOWED_KEYWORDS[0]:
-            if not "${URL}" in keyword.steps[0][2].upper():
+            if not "${URL}" in keyword.steps[1][2].upper():
                 report = True
         if report:
             self.report(keyword, f"Do you have URL variable in place? Check keyword: {ALLOWED_KEYWORDS[0]}", keyword.linenumber+1)

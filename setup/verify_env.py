@@ -25,8 +25,8 @@ def check_robot_framework_package():
 
 def check_selenium_library_package():
     pip_packages = get_pip_packages()
-    if not "robotframework-seleniumlibrary" in pip_packages:
-        print("Install SeleniumLibrary: pip install robotframework-seleniumlibrary")
+    if not "robotframework-browser" in pip_packages:
+        print("Install Browser-library: pip install robotframework-browser")
         sys.exit(1)
 
 def check_rflint_package():
@@ -44,17 +44,12 @@ def check_smoke_suite_location():
 
 def evaluate_environment():
     try:
-        subprocess.run(["robot", "-v", "BROWSER:ff", "-d", str(SETUP_DIRECTORY), SMOKE_TEST_SUITE], check=True)
-        IS_FIREFOX = True
+        subprocess.run(["robot", "-d", str(SETUP_DIRECTORY), SMOKE_TEST_SUITE], check=True)
+        BROWSERS_INSTALLED = True
     except subprocess.CalledProcessError:
-        IS_FIREFOX = False
-    try:
-        subprocess.run(["robot", "-v", "BROWSER:gc", "-d", str(SETUP_DIRECTORY), SMOKE_TEST_SUITE], check=True)
-        IS_CHROME = True
-    except subprocess.CalledProcessError:
-        IS_CHROME = False
-    if not IS_CHROME and not IS_FIREFOX:
-        print("Setup webdriver based on the instructions for Firefox OR Chrome")
+        BROWSERS_INSTALLED = False
+    if not BROWSERS_INSTALLED:
+        print("No browser binaries installed. Install them according to the instructions.")
         sys.exit(1)
 
 

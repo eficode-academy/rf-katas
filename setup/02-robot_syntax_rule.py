@@ -2,26 +2,24 @@ from rflint.common import SuiteRule, TestRule, ERROR, WARNING
 from static import normalize
 
 MUST_KEYWORDS = [
-        "Open Browser",
-        "Input Text",
-        "Input Password"
-    ]
+    "New Browser",
+    "New Page",
+    "Fill Text",
+    "Fill Secret",
+]
 
 LOGIN_KEYWORDS = [
-        "Click Element",
-        "Click Button",
-        "Submit Form"
+    "Click",
+    "Keyboard Key",
 ]
 
 VERIFY_KEYWORDS = [
-        "Page Should Contain",
-        "Page Should Contain Element",
-        "Title Should Be",
-        "Wait Until Page Contains",
-        "Wait Until Page Contains Element"
+    "Get Title",
+    "Get Url",
+    "Get Text",
 ]
 
-DEFAULT_MESSAGE = "Did you find all keywords from SeleniumLibrary documentation?"
+DEFAULT_MESSAGE = "Did you find all keywords from the Browser-library documentation?"
 
 class TestCaseImplementation02(TestRule):
     severity = ERROR

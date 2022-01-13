@@ -38,7 +38,7 @@ class TestCaseImplementation05(TestRule):
             has_failures = True
         elif len(test_steps) == 4:
             has_setup = False
-            setup = list(filter(lambda s: "test setup" in str(s).lower(), test.parent.settings))[0]
+            setup = next(filter(lambda s: "test setup" in str(s).lower(), test.parent.settings), "")
             if SETUP_KEYWORD in normalize(str(setup)) and not setup.is_comment():
                 has_setup = True
             if not has_setup:

@@ -8,7 +8,7 @@ existing test case from `login.robot` test suite to `invalid_login.robot`.
 
 ```
 *** Settings ***
-Library    SeleniumLibrary
+Library    Browser
 
 *** Variables ***
 ${URL}=    http://localhost:7272
@@ -23,28 +23,28 @@ Error Page Should Be Visible After Successful Login
     Enter Password    ${SPACE*2}
     Submit Login Form
     Verify That Error Page Is Visible
-    [Teardown]    Close Browser
 
 *** Keywords ***
 
 Open Browser To Login Page
-    Open Browser    ${URL}   browser=ff
+    New Browser    headless=${FALSE}
+    New Page    ${URL}
 
 Enter Username
     [Arguments]    ${username}
-    Input Text    id=username_field    ${username}
+    Fill Text    id=username_field    ${username}
 
 Enter Password
     [Arguments]    ${password}
-    Input Password    id=password_field    ${password}
+    Fill Secret    id=password_field    $password
 
 Submit Login Form
-    Click Element    id=login_button
+    Click    id=login_button
 
 Verify That Error Page Is Visible
-    Page Should Contain    Error Page
-    Location Should Be    ${URL}/error.html
-    Title Should Be    Error Page
+    Get Text    id=header    ==    Error Page
+    Get Url    ==    ${URL}/error.html
+    Get Title    ==    Error Page
 ```
 
 </details>
@@ -66,7 +66,7 @@ Now do a cross-check between `login.robot` and `invalid_login.robot`. Find the d
 
 Now run the command `robot robot` to run all suites and you may notice some errors.
 
-```
+```text
 =============================================================================
 Login & Invalid Login
 ==============================================================================
@@ -98,7 +98,7 @@ Login & Invalid Login                                                 | FAIL |
 ==============================================================================
 ```
 
-Why is that? We've it in our `resource.robot`, right?
+Why is that? We have the keywords in our `resource.robot`, right?
 
 The reason is the same that we had with non `Builtin` Libraries. We need to tell the Robot Framework
 to use our `resource.robot` in our test suite.
@@ -108,9 +108,9 @@ your test suite file. Resource files can also resource other resource files.
 
 Let's modify the `login.robot` settings table by adding the `Resource` option there.
 
-```
+```robot
 *** Settings ***
-Library    SeleniumLibrary
+Library    Browser
 Resource    resource.robot
 ```
 
@@ -122,7 +122,7 @@ Create 2 more test cases that uses 2 different combination of invalid credential
 
 When the tests pass run the following command to ensure that changes are done in right manner run:
 
-  - Windows: double click the `06-resource_files.cmd`
-  - Linux/macOS: run `./exercises/verify/06-resource_files.sh`
+- Windows: double click the `06-resource_files.cmd`
+- Linux/macOS: run `./exercises/verify/06-resource_files.sh`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
