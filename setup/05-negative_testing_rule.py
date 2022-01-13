@@ -1,4 +1,4 @@
-from rflint.common import KeywordRule, SuiteRule, TestRule, ERROR
+from rflint.common import KeywordRule, TestRule, ERROR
 from static import normalize
 
 MUST_KEYWORDS = [

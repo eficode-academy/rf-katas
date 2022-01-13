@@ -1,4 +1,4 @@
-from rflint.common import KeywordRule, SuiteRule, TestRule, ERROR
+from rflint.common import TestRule, ERROR
 from static import normalize
 
 CLOSE_BROWSER = "Close Browser"

@@ -1,5 +1,4 @@
-from rflint.common import KeywordRule, SuiteRule, TestRule, GeneralRule, ERROR, WARNING
-from rflint.parser import SettingTable
+from rflint.common import KeywordRule, TestRule, GeneralRule, ERROR, WARNING
 from static import normalize
 
 ALLOWED_KEYWORDS = [
