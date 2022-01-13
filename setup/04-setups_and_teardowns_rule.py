@@ -21,4 +21,4 @@ class TestSettingsCheck(TestRule):
             if SUCCESSFUL_LOGIN in settings and CLOSE_BROWSER in settings:
                 report = False
         if report:
-            self.report(test, "Check out that you've added needed setup and/or teardown for your test: {}, expected: {}".format(test.name, ", ".join(expected_settings)), test.linenumber)
+            self.report(test, f"Check out that you've added needed setup and/or teardown for your test: {test.name}, expected: {', '.join(expected_settings)}", test.linenumber)

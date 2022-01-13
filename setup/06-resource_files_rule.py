@@ -39,7 +39,7 @@ class NumberOfKeywordsInResource06(ResourceRule):
         for keyword in resource.keywords:
             keywords.append(keyword.name.lower().title())
         if keywords != self.ALLOWED_KEYWORDS:
-            self.report(resource, "Did you remember to add all keywords: {} to resources.robot file?".format(", ".join(self.ALLOWED_KEYWORDS)), 0)
+            self.report(resource, f"Did you remember to add all keywords: {', '.join(self.ALLOWED_KEYWORDS)} to resources.robot file?", 0)
 
 class NumberOfTestCasesInSuite06(SuiteRule):
     severity = ERROR
@@ -52,4 +52,3 @@ class NumberOfTestCasesInSuite06(SuiteRule):
             self.report(suite, "Do you have the existing 2 cases in login.robot?", 0)
         elif suite.name == "invalid_login" and len(tests) != 3:
             self.report(suite, "Did you implement 2 more tests to invalid_login.robot?", 0)
-

@@ -27,8 +27,8 @@ class TestCaseImplementation05(TestRule):
     severity = ERROR
 
     def apply(self, test):
-        default_message = "Check that you've implemented test case {} as instructed: ".format(test.name)
-        default_message += "{} is expected as a setup or part of the test. {} are required as part of the test".format(SETUP_KEYWORD, ", ".join(MUST_KEYWORDS))
+        default_message = f"Check that you've implemented test case {test.name} as instructed: "
+        default_message += f"{SETUP_KEYWORD} is expected as a setup or part of the test. {', '.join(MUST_KEYWORDS)} are required as part of the test"
         test_steps = []
         for step in test.steps:
             if len(step) > 1:

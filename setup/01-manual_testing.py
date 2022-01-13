@@ -5,7 +5,7 @@ from static import LOGIN_ROBOT_FILE
 
 def check_file_exists():
     if not os.path.isfile(LOGIN_ROBOT_FILE):
-        print("login.robot not found under {}, please create one".format(LOGIN_ROBOT_FILE))
+        print(f"login.robot not found under {LOGIN_ROBOT_FILE}, please create one")
         sys.exit(1)
 
 def check_content():
