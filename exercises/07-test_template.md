@@ -79,9 +79,9 @@ And `Keywords` table like this:
 ```robot
 *** Keywords ***
 Verify That Error Page Is Visible
-    Page Should Contain    Error Page
-    Location Should Be    ${URL}/error.html
-    Title Should Be    Error Page
+    Get Text    body    contains    Error Page
+    Get Url    ==    ${URL}/error.html
+    Get Title    ==    Error Page
 
 Template Error Page Is Visible When Using Incorrect Credentials
     [Arguments]    ${username}    ${password}
