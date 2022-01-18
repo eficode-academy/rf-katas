@@ -90,7 +90,8 @@ Now in order to have the `New Page` we need to define it under the test case and
 
 Note that keywords are actually case-insensitive, so `new page`, `NEW PAGE`, `New page`,
 and `NeW pAgE` will all work. However, the recommended way is to capitalize the first letter of
-each word, like `New Page` in this case.
+each word, like `New Page` in this case. More information can be found from the
+*[How to write good test cases using Robot Framework](https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst#naming)*-guide.
 
 ```robot
 *** Test Cases ***
