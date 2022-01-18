@@ -29,7 +29,7 @@ Welcome Page Should Be Visible After Successful Login
     Fill Text    id=username_field    demo
     Fill Secret    id=password_field    mode
     Click    id=login_button
-    Get Text    id=header    ==    Welcome Page
+    Get Text    body    contains    Welcome Page
     Get Url    ==    http://localhost:7272/welcome.html
     Get Title    ==    Welcome Page
 ```

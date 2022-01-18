@@ -44,7 +44,7 @@ Submit Login Form
     Click    id=login_button
 
 Verify That Welcome Page Is Visible
-    Get Text    id=header    ==    Welcome Page
+    Get Text    body    contains    Welcome Page
     Get Url    ==    ${URL}/welcome.html
     Get Title    ==    Welcome Page
 ```

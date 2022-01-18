@@ -37,7 +37,7 @@ Error Page Should Be Visible After Invalid Login With Invalid Username And Valid
 *** Keywords ***
 
 Verify That Error Page Is Visible
-    Get Text    id=header    ==    Error Page
+    Get Text    body    contains    Error Page
     Get Url    ==    ${URL}/error.html
     Get Title    ==    Error Page
 ```

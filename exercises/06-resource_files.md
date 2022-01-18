@@ -42,7 +42,7 @@ Submit Login Form
     Click    id=login_button
 
 Verify That Error Page Is Visible
-    Get Text    id=header    ==    Error Page
+    Get Text    body    contains    Error Page
     Get Url    ==    ${URL}/error.html
     Get Title    ==    Error Page
 ```
