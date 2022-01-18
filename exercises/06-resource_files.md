@@ -6,7 +6,7 @@ existing test case from `login.robot` test suite to `invalid_login.robot`.
 <details>
     <summary>So your <code>invalid_login.robot</code> could look something like this</summary>
 
-```
+```robot
 *** Settings ***
 Library    Browser
 
