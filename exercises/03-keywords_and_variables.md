@@ -36,7 +36,7 @@ Welcome Page Should Be Visible After Successful Login
 
 </details>
 
-This test is technically correct, but can be quite hard to read if you don't know e.g. what is a HTML
+This test is technically correct, but can be quite hard to read if you don't know e.g. what is an HTML
 attribute `id`.
 
 In other words, we need to refactor our test a bit.
@@ -68,11 +68,11 @@ After the possible fixes create the following keywords:
 - `Submit Login Form`
 - `Verify That Welcome Page Is Visible`
 
-*Pro tip 1:* One user defined keyword can contain multiple keywords, just like a test case can have
+*Pro-tip 1:* One user defined keyword can contain multiple keywords, just like a test case can have
 multiple steps. This can be used to shorten test cases by hiding long chains of actions inside aptly
 named keywords.
 
-*Pro tip 2:* User defined keywords can become more versatile, through the use of arguments:
+*Pro-tip 2:* User defined keywords can become more versatile, through the use of arguments:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#user-keyword-arguments
 
 After you've defined and implemented the keywords your test case should look like this:
@@ -119,7 +119,7 @@ The `=` is optional and can be removed if you don't want to use it. You still ne
 (preferably at least 4) between `${VARIABLE_NAME}` and `variable value`. Also, variable names are completely
 case-insensitive. Robot also ignores spaces and `_` signs. This means that to robot these variables names:
 `${MYVARIABLE}`, `${MyVariable}`, `${MY VARIABLE}`, `${My_variable}`, and `${myvariable}` are actually all
-referring to the same variable. The recomended best practice is to define variables in the `*** Variables ***`
+referring to the same variable. The recommended best practice is to define variables in the `*** Variables ***`
 table in ALL CAPS. This is purely to help everyone better distinguish the scope of variables (use upper
 case for global, suite, and test variables and lower case for keyword variables).
 
@@ -132,12 +132,12 @@ ${URL} =    http://localhost:7272
 
 Now replace all the existing `http://localhost:7272` with `${URL}`.
 
-*Pro tip:* You can combine variables with text like this `${URL}/` or `${URL}/welcome.html` without
+*Pro-tip:* You can combine variables with text like this `${URL}/` or `${URL}/welcome.html` without
 any concatenation or arithmetic operations.
 
 After you've made changes, run the `robot robot/login.robot` to verify that the test is still passing.
 
-*Pro tip:* If you don't want to actually run the test case but just check the syntax you can also run
+*Pro-tip:* If you don't want to actually run the test case but just check the syntax you can also run
 `robot --dryrun robot/login.robot`. Check `robot -h` for more details.
 
 Now that you've successfully changed to use `${URL}` variable, think about what other values could
@@ -148,7 +148,7 @@ Once you've done those, run the `robot robot/login.robot` to verify that changes
 
 To ensure that changes are done in right manner run:
 
-- Windows: double click the `03-keywords_and_variables.cmd`
+- Windows: double-click the `03-keywords_and_variables.cmd`
 - Linux/macOS: run `./exercises/verify/03-keywords_and_variables.sh`
 
-If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
+If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

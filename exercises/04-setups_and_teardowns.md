@@ -1,6 +1,6 @@
 # Setups and Teardowns
 
-Robot Framework provides features called _Setup_ and _Teardown_ to help with repetive parts that
+Robot Framework provides features called _Setup_ and _Teardown_ to help with repetitive parts that
 which are required to run the test, but are not necessary _part_ of the tests. In our case such things
 would be e.g. opening and closing the browser. More details can be found at
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-setup-and-teardown.
@@ -62,7 +62,7 @@ Name the new test case `Login Form Should Be Visible After Successful Logout`.
 
 After implementing the new test case run both of the test cases with command
 `robot --randomize tests robot/login.robot` to make sure that they're not executed in order all the
-time. This helps to ensure that all tests pass regardless of what order they are ran in. Check
+time. This helps to ensure that all tests pass regardless of what order they are run in. Check
 `robot -h` for more info.
 
 You may have noticed that you just copy-pasted the `Welcome Page Should Be Visible After Successful Login`
@@ -103,7 +103,7 @@ Existence of `Setup` indicates to the test case reader, that there is some preco
 ## Test Teardown
 
 Teardown works similarly to Setup with the main difference being that it will be executed after the
-main part of the test has run. Teardowns are run _always_, regardless whether the test succeeds or
+main part of the test has run. Teardowns are _always_ run, regardless whether the test succeeds or
 fails.
 
 Similarly to the `[Setup]`, a teardown would be defined with a `[Teardown]` option in the end of the
@@ -115,7 +115,7 @@ by default after each test case. (This setup can be changed with one of the Brow
 
 To ensure that changes are done in right manner run:
 
-- Windows: double click the `04-setups_and_teardowns.cmd`
+- Windows: double-click the `04-setups_and_teardowns.cmd`
 - Linux/macOS: run `./exercises/verify/04-setups_and_teardowns.sh`
 
-If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
+If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

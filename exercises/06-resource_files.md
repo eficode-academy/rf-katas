@@ -64,7 +64,7 @@ Now do a cross-check between `login.robot` and `invalid_login.robot`. Find the d
 `login.robot` and `invalid_login.robot` and move them to `resource.robot`. Remove these keywords from
 `login.robot` and `invalid_login.robot`.
 
-Now run the command `robot robot` to run all suites and you may notice some errors.
+Now run the command `robot robot` to run all suites. You may notice some errors.
 
 ```text
 =============================================================================
@@ -103,7 +103,7 @@ Why is that? We have the keywords in our `resource.robot`, right?
 The reason is the same that we had with non `Builtin` Libraries. We need to tell the Robot Framework
 to use our `resource.robot` in our test suite.
 
-That's why you need to add `Resources` 4 spaces `<resource_name>` to your `*** Settings ***` table in
+That's why you need to add `Resources` four spaces `<resource_name>` to your `*** Settings ***` table in
 your test suite file. Resource files can also resource other resource files.
 
 Let's modify the `login.robot` settings table by adding the `Resource` option there.
@@ -118,11 +118,11 @@ Now, when you run `robot robot/login.robot`, the tests should pass again.
 
 Add missing `Resource` option to `robot/invalid_login.robot` file as well and ensure your tests are passing.
 
-Create 2 more test cases that uses 2 different combination of invalid credentials to `invalid_login.robot`.
+Create two more test cases that use two different combination of invalid credentials to `invalid_login.robot`.
 
 When the tests pass run the following command to ensure that changes are done in right manner run:
 
-- Windows: double click the `06-resource_files.cmd`
+- Windows: double-click the `06-resource_files.cmd`
 - Linux/macOS: run `./exercises/verify/06-resource_files.sh`
 
-If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
+If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

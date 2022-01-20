@@ -47,15 +47,15 @@ Note that if you have a `${USERNAME}` variable in the `*** Variables ***` table,
 `${USERNAME}` will access only that keyword argument variable (in programming, this is called
 shadowing).
 
-*Pro tip:* The `Fill Secret` keyword might fail with an error saying `Invalid variable name ''`. This
-originates from how that specifc keyword handles variables. The filled data is considered as a _secret_, so the
+*Pro-tip:* The `Fill Secret` keyword might fail with an error saying `Invalid variable name ''`. This
+originates from how that specific keyword handles variables. The filled data is considered as a _secret_, so the
 idea would be not to log it, even to the log-file. More information can be found from the [keyword-documentation](https://marketsquare.github.io/robotframework-browser/Browser.html#Fill%20Secret),
 but generally the error can be fixed by replacing the variable reference `${password}` with `$password`,
 as explained in the documentation.
 
 When the test passes run the following command to ensure that changes are done in right manner run:
 
-- Windows: double click the `05-negative_testing.cmd`
+- Windows: double-click the `05-negative_testing.cmd`
 - Linux/macOS: run `./exercises/verify/05-negative_testing.sh`
 
-If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
+If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

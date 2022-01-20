@@ -17,7 +17,7 @@ used frequently in this ecosystem.
 - *keyword* - a component, similar to a function in programming, that robot uses to execute steps
 - *arguments* - Values that are given to keywords. Also known as parameters.
 
-## Install robotframework
+## Install Robot Framework
 
 In order to run Robot Framework test cases we're going to need install Robot Framework. We install this by
 using `pip`. By default, the installation happens by calling `pip3 install <package_name>`, but if you are
@@ -27,7 +27,7 @@ Install Robot Framework: `pip3 install robotframework`.
 
 If the installation was successful, you can use `robot -h` command to verify that you get command line
 help for Robot Framework. Output should include Robot version number and some other helpful stuff,
-includin the command line options (which are also available in [here](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options)).
+including the command line options (which are also available in [here](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options)).
 
 To run automated test cases for web UIs, the current go-to library is the Browser-library.
 
@@ -54,9 +54,9 @@ After the server has started it will be running in http://localhost:7272.
 Verify setup by running:
 
 - in Windows: double click 00-verify_setup.cmd
-- in MacOS/Linux: run command `./exercises/verify/00-verify_setup.sh`
+- in macOS/Linux: run command `./exercises/verify/00-verify_setup.sh`
 
 This should take a few seconds. If the output of the script ends with `Setup in perfect condition!`
 we're good to go.
 
-Otherwise, check the output and fix the missing packages or place the webdriver in the correct location.
+Otherwise, check the output and fix the missing packages.

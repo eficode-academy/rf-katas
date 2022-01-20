@@ -16,7 +16,7 @@ Features:
   - Password: mode
   - Submit login form button
 - After successful login the user is redirected to the welcome page
-  - User can logout after successful login and will be redirected to the login page
+  - User can log out after successful login and will be redirected to the login page
 - After incorrect login credentials the user is redirected to the error page
 
 ## Exercise 1
@@ -24,7 +24,7 @@ Features:
 How would you test the successful login use case?
 
 In the root directory of the rf-katas project create a `robot` folder. Inside it add a text file, call
-it `login.robot` (note that .robot is the extension, not .txt).
+it `login.robot` (note that `.robot` is the extension, not `.txt`).
 
 Write line by line, all the steps that you would need to perform if you were manually testing the login feature.
 
@@ -35,4 +35,4 @@ After you've added steps that you think are needed to manually test login featur
 - Windows: double click `01-manual_testing.cmd`
 - Linux/macOS: `./exercises/verify/01-manual_testing.sh`
 
-If the output is `Ready to proceed!` then you're good to go! Otherwise the check the output about what is missing?
+If the output is `Ready to proceed!` then you're good to go! Otherwise, the check the output about what is missing?

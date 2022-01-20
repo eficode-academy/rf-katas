@@ -45,7 +45,7 @@ Verify That Error Page Is Visible
 </details>
 
 So, basically what most of us did was copy-paste the first test several times, change the test names
-and change the entered user names and passwords. The tests do test different things and work well, but it
+and change the entered usernames and passwords. The tests do test different things and work well, but it
 doesn't really make sense to copy-paste several lines and modify 2 parameters. Instead, we should use
 test templates: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-templates
 
@@ -55,8 +55,8 @@ applicable when you need to run the same test, multiple times, every time with a
 Let's get started. Rename the first test case to `Template Error Page Is Visible When Using Incorrect Credentials`
 and move it from the `Test Cases` table under the `Keywords` table.
 
-Our `Template Error Page Is Visible When Using Incorrect Credentials` keyword starts with
-`Open Browser to Login Page`, which is repeated in every test and it's not really part of the test.
+The `Template Error Page Is Visible When Using Incorrect Credentials` keyword starts with a
+`Open Browser to Login Page`-keyword. This repeats in every test while it's not really part of the testing.
 We can get rid of the repetitive keyword by adding it as `Test Setup` into our `Settings` table.
 After that we can delete those the line from `Template Error Page Is Visible When Using Incorrect Credentials`.
 A similar addition could be done with teardowns and the `Test Teardown` setting.
@@ -123,11 +123,11 @@ Empty Username Empty Password    ${EMPTY}    ${EMPTY}
 Now run `robot robot/invalid_login.robot` command to verify that changes are done correctly.
 
 Now let's create 4 more test cases. Just add new line `<name of the test case> 4 spaces <username> 4 spaces <password>`
-and voilá. We've now a new test case.
+and voilà. We've now a new test case.
 
 Once you've implemented all 5 test cases run:
 
-- Windows: double click the `07-test_template.cmd`
+- Windows: double-click the `07-test_template.cmd`
 - Linux/macOS: run `./exercises/verify/07-test_template.sh`
 
-If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
+If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

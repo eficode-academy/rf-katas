@@ -162,10 +162,10 @@ opens by default in a _headless_ state. Headless simply means that the GUI is no
 is to make test performance better. We need to open the browser specifically in a headful state if we
 want to see what is happening during the test.
 
-Before getting into how to do that, let's expain three important Browser-library concepts: browser,
+Before getting into how to do that, let's explain three important Browser-library concepts: browser,
 context, and page.
 
-- _Browser_ indicates a browser - Chromium (Chrome, Edge, Opera), Firefox, or Webkit (Safari).
+- _Browser_ indicates a browser - Chromium (Chrome, Edge, Opera), Firefox, or WebKit (Safari).
 - _Context_ includes cookies, sessions, profile settings etc. A context is opened within a browser.
 - _Page_ is simply a webpage (or a tab) which is opened inside a browser. A page is opened within a context.
 
@@ -177,7 +177,7 @@ If we want to open a browser in a headful state, we'll have to call the `New Bro
 (before calling `New Page`) with a specific argument defining this: `headless=${FALSE}`. The context
 is still created with default arguments, and at this point there's no need to adjust those.
 
-*Pro tip:* as everything else, arguments can be specified by leaving at least 2 (preferably 4) spaces
+*Pro-tip:* as everything else, arguments can be specified by leaving at least 2 (preferably 4) spaces
 between the keyword and them.
 
 Running the tests headful is not necessary for the final test, but it makes debugging a lot easier
@@ -216,7 +216,7 @@ Welcome Page Should Be Visible After Successful Login
     Check That Welcome Page Text Is Visible
 ```
 
-*Note:* Make sure that the SUT is running on it's own windows and that you can access it with address
+*Note:* Make sure that the SUT is running in its own window and that you can access it with address
 http://localhost:7272.
 
 Now you can see browser actually opening and accessing to SUT and then failing due to another keyword
@@ -230,8 +230,8 @@ and click the login element.
 
 You need to open the source code for the web page to find the element IDs.
 
-To verify that welcome page is visible you can check the page content, url and title. With the Browser-library,
-vefications (or assertions) can be done in combination with the `Get ...`-keywords, for example `Get Title    ==    Welcome Page`. More information at https://marketsquare.github.io/robotframework-browser/Browser.html#Assertions.
+To verify that welcome page is visible you can check the page content, URL and title. With the Browser-library,
+verifications (or assertions) can be done in combination with the `Get ...`-keywords, for example `Get Title    ==    Welcome Page`. More information at https://marketsquare.github.io/robotframework-browser/Browser.html#Assertions.
 
 After you've successfully run the test case with `robot robot/login.robot` you should see output like this:
 
@@ -252,4 +252,4 @@ After you've made the test pass, ensure that it's done with right manner by runn
 - Windows: double click `02-robot_syntax.cmd`
 - Linux/macOS: run `./exercises/verify/02-robot_syntax.sh`
 
-If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
+If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.
