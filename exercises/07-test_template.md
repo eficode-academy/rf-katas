@@ -120,6 +120,9 @@ So now that we're using the data driven style of creating test case, under test 
 Empty Username Empty Password    ${EMPTY}    ${EMPTY}
 ```
 
+*Note:* the commented line (one starting with `#`) isn't required. It's there merely to server as a
+header for the test case table to enhance readability.
+
 Now run `robot robot/invalid_login.robot` command to verify that changes are done correctly.
 
 Now let's create 4 more test cases. Just add new line `<name of the test case> 4 spaces <username> 4 spaces <password>`
