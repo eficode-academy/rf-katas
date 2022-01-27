@@ -92,7 +92,7 @@ Ensure you refactored test is still passing by running `robot robot/login.robot`
 
 But hey! Doesn't our test case look nice and clean? With UTF-8 support you can write those user defined
 keywords and test case names practically any language that you want: Finnish, Swedish, Russian, Traditional
-Chinese, what ever suites your project/company policy.
+Chinese, or what ever suites your project/company policy.
 
 ## Variables
 
@@ -115,8 +115,8 @@ Defining variables can be done with the following syntax:
 ${VARIABLE_NAME} =    variable value
 ```
 
-The `=` is optional and can be removed if you don't want to use it. You still need to have at least 2 spaces
-(preferably at least 4) between `${VARIABLE_NAME}` and `variable value`. Also, variable names are completely
+The `=` is optional and can be removed if you don't want to use it. You still need to have two or more
+(preferably at least four) spaces between `${VARIABLE_NAME}` and `variable value`. Also, variable names are completely
 case-insensitive. Robot also ignores spaces and `_` signs. This means that to robot these variables names:
 `${MYVARIABLE}`, `${MyVariable}`, `${MY VARIABLE}`, `${My_variable}`, and `${myvariable}` are actually all
 referring to the same variable. The recommended best practice is to define variables in the `*** Variables ***`
