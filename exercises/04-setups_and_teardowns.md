@@ -100,7 +100,7 @@ Login Form Should Be Visible After Successful Logout
     # rest of the implementation
 ```
 
-*Tip:* `#` starts a comment line for Robot Framework. Nothing after it will be executed.
+*Pro-tip:* `#` starts a comment line for Robot Framework. Nothing after it will be executed.
 
 Existence of `Setup` indicates to the test case reader, that there is some precondition before our
 actual test execution.
@@ -122,7 +122,7 @@ in that.)
 
 The teardown is defined a similar way as was setup, using the `[Teardown]` option.
 
-*Tip:* In order to make the `Login Form Should Be Visible After Successful Logout` test work, you've
+*Pro-tip:* In order to make the `Login Form Should Be Visible After Successful Logout` test work, you've
 probably created a `Do Successful Logout` keyword for logging out. Maybe we could utilize
 that in the teardown?
 

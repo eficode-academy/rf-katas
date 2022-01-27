@@ -63,7 +63,7 @@ A similar addition could be done with teardowns and the `Test Teardown` setting.
 
 Also remember to add arguments for `Template Error Page Is Visible When Using Incorrect Credentials`.
 
-*Tip:* A keyword can take multiple arguments when separating them with 4 spaces.
+*Pro-tip:* A keyword can take multiple arguments when separating them with 4 spaces.
 
 So now our `Settings` table should look like this:
 

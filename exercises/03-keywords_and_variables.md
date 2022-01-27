@@ -68,11 +68,11 @@ After the possible fixes create the following keywords:
 - `Submit Login Form`
 - `Verify That Welcome Page Is Visible`
 
-*Pro-tip 1:* One user defined keyword can contain multiple keywords, just like a test case can have
+*Pro-tip:* One user defined keyword can contain multiple keywords, just like a test case can have
 multiple steps. This can be used to shorten test cases by hiding long chains of actions inside aptly
 named keywords.
 
-*Pro-tip 2:* User defined keywords can become more versatile, through the use of arguments:
+*Pro-tip:* User defined keywords can become more versatile, through the use of arguments:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#user-keyword-arguments
 
 After you've defined and implemented the keywords your test case should look like this:
