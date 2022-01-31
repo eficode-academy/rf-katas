@@ -10,8 +10,8 @@ that we're going to need to have the following items installed:
 - Pip for Python 3
   - Windows: https://www.howtogeek.com/197947/how-to-install-python-on-windows/
   - Linux: `sudo apt-get install python3-pip && pip3 install --upgrade pip`
-  - MacOS: `brew install python` pip is already included
-- Node.js: https://nodejs.org/en/download/
+  - macOS: `brew install python` pip is already included
+- Node.js (version 12 or newer): https://nodejs.org/en/download/
 - System under test
   - Open a new terminal window, change directory to this repository root folder and run the application
     with: `python server/server.py`
