@@ -55,13 +55,15 @@ Usually we don't want to repeat ourselves that much, since it makes maintenance 
 To ease out maintenance we can use resource files:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#resource-and-variable-files
 
-The biggest difference between resource files and test suite files is that in a resource file you don't have the
-`*** Test Cases ***` or `*** Tasks ***` table.
+The biggest difference between resource files and test suite files is that in a resource file you
+don't have the `*** Test Cases ***` or `*** Tasks ***` table. It is [recommended](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#taking-resource-files-into-use)
+to use a `.resource` extension with resource files (instead of the otherwise used `.robot`). This is
+just for separating resource files from test files. The functionality will remain the same.
 
-So let's create our `resource.robot` file under `robot`.
+So let's create our `common.resource` file under `robot`.
 
 Now do a cross-check between `login.robot` and `invalid_login.robot`. Find the duplicate keywords from
-`login.robot` and `invalid_login.robot` and move them to `resource.robot`. Remove these keywords from
+`login.robot` and `invalid_login.robot` and move them to `common.resource`. Remove these keywords from
 `login.robot` and `invalid_login.robot`.
 
 Now run the command `robot robot` to run all suites. You may notice some errors.
@@ -98,10 +100,10 @@ Login & Invalid Login                                                 | FAIL |
 ==============================================================================
 ```
 
-Why is that? We have the keywords in our `resource.robot`, right?
+Why is that? We have the keywords in our `common.resource`, right?
 
 The reason is the same that we had with non `Builtin` Libraries. We need to tell the Robot Framework
-to use our `resource.robot` in our test suite.
+to use our `common.resource` in our test suite.
 
 That's why you need to add `Resources` four spaces `<resource_name>` to your `*** Settings ***` table in
 your test suite file. Resource files can also resource other resource files.
@@ -111,7 +113,7 @@ Let's modify the `login.robot` settings table by adding the `Resource` option th
 ```robot
 *** Settings ***
 Library    Browser
-Resource    resource.robot
+Resource    common.resource
 ```
 
 Now, when you run `robot robot/login.robot`, the tests should pass again.

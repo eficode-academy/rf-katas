@@ -3,12 +3,12 @@ import sys
 import subprocess
 from static import ROBOT_ROOT_PATH, INVALID_LOGIN_ROBOT, LOGIN_ROBOT_FILE
 
-RESOURCE_FILE = os.path.join(ROBOT_ROOT_PATH,'resource.robot')
+RESOURCE_FILE = os.path.join(ROBOT_ROOT_PATH, "common.resource")
 
 
 def check_file_exists():
     if not os.path.isfile(RESOURCE_FILE):
-        print("resource.robot not found under {}, please create one".format(RESOURCE_FILE))
+        print(f"common.resource not found under {RESOURCE_FILE}, please create one")
         sys.exit(1)
 
 def run_linting():

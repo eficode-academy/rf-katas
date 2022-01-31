@@ -7,7 +7,7 @@
 ```robot
 *** Settings ***
 Library    Browser
-Resource    resource.robot
+Resource    common.resource
 
 *** Variables ***
 
@@ -70,7 +70,7 @@ So now our `Settings` table should look like this:
 ```robot
 *** Settings ***
 Library    Browser
-Resource    resource.robot
+Resource    common.resource
 Test Setup    Open Browser To Login Page
 ```
 
@@ -104,7 +104,7 @@ Our `Settings` table should look like this:
 ```robot
 *** Settings ***
 Library    Browser
-Resource    resource.robot
+Resource    common.resource
 Test Setup    Open Browser To Login Page
 Test Template    Template Error Page Is Visible When Using Incorrect Credentials
 ```
