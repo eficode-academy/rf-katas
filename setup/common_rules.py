@@ -1,5 +1,4 @@
 from rflint.common import SuiteRule, ERROR
-from rflint.parser import SettingTable
 
 class NumberOfTestCases(SuiteRule):
 

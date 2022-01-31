@@ -1,4 +1,4 @@
-from rflint.common import KeywordRule, SuiteRule, TestRule, ERROR
+from rflint.common import KeywordRule, SuiteRule, ERROR
 
 from static import normalize
 
@@ -9,7 +9,6 @@ ALLOWED_KEYWORDS = [
 
 class TestTemplateInUse(SuiteRule):
     severity = ERROR
-
 
     def apply(self, suite):
         is_test_template = False
