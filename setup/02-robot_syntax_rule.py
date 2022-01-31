@@ -2,26 +2,24 @@ from rflint.common import SuiteRule, TestRule, ERROR, WARNING
 from static import normalize
 
 MUST_KEYWORDS = [
-        "Open Browser",
-        "Input Text",
-        "Input Password"
-    ]
+    "New Browser",
+    "New Page",
+    "Fill Text",
+    "Fill Secret",
+]
 
 LOGIN_KEYWORDS = [
-        "Click Element",
-        "Click Button",
-        "Submit Form"
+    "Click",
+    "Keyboard Key",
 ]
 
 VERIFY_KEYWORDS = [
-        "Page Should Contain",
-        "Page Should Contain Element",
-        "Title Should Be",
-        "Wait Until Page Contains",
-        "Wait Until Page Contains Element"
+    "Get Title",
+    "Get Url",
+    "Get Text",
 ]
 
-DEFAULT_MESSAGE = "Did you find all keywords from SeleniumLibrary documentation?"
+DEFAULT_MESSAGE = "Did you find all keywords from the Browser-library documentation?"
 
 class TestCaseImplementation02(TestRule):
     severity = ERROR
@@ -37,19 +35,19 @@ class TestCaseImplementation02(TestRule):
             if not normalize(keyword) in test_steps:
                 report = True
         if report:
-            self.report(test, DEFAULT_MESSAGE + ", expected: {}".format(", ".join(MUST_KEYWORDS)), test.linenumber)
+            self.report(test, f"{DEFAULT_MESSAGE}, expected: {', '.join(MUST_KEYWORDS)}", test.linenumber)
 
         for keyword in test_steps:
             if normalize(keyword) in LOGIN_KEYWORDS:
                 break
         else:
-            self.report(test, DEFAULT_MESSAGE + ", expected one of: {}".format(", ".join(LOGIN_KEYWORDS)), test.linenumber)
+            self.report(test, f"{DEFAULT_MESSAGE}, expected one of: {', '.join(LOGIN_KEYWORDS)}", test.linenumber)
 
         for keyword in test_steps:
             if normalize(keyword) in VERIFY_KEYWORDS:
                 break
         else:
-            self.report(test, DEFAULT_MESSAGE + ", expected one of: {}".format(", ".join(VERIFY_KEYWORDS)), test.linenumber)
+            self.report(test, f"{DEFAULT_MESSAGE}, expected one of: {', '.join(VERIFY_KEYWORDS)}", test.linenumber)
 
 class TestCaseKeywordCases02(TestRule):
     severity = WARNING
@@ -59,7 +57,7 @@ class TestCaseKeywordCases02(TestRule):
         for step in test.steps:
             if len(step) > 1:
                 if step[1] != normalize(step[1]):
-                    self.report(test, "Best practice is to Capitalize All The Words In A Keyword: " + step[1] , test.linenumber)
+                    self.report(test, f"Best practice is to Capitalize All The Words In A Keyword: {step[1]}", test.linenumber)
 
 
 class CheckTestCasesName02(SuiteRule):
@@ -69,4 +67,4 @@ class CheckTestCasesName02(SuiteRule):
         expected_name = "Welcome Page Should Be Visible After Successful Login"
         for testcase in suite.testcases:
             if normalize(testcase.name) != expected_name:
-                self.report(suite, "Check test case name: {}, expected: {}".format(testcase.name, expected_name), 0)
+                self.report(suite, f"Check test case name: {testcase.name}, expected: {expected_name}", 0)

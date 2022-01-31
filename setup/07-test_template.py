@@ -1,4 +1,3 @@
-import os
 import sys
 import subprocess
 from static import INVALID_LOGIN_ROBOT

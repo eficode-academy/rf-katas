@@ -1,5 +1,4 @@
 import sys
-import os
 import subprocess
 from static import LOGIN_ROBOT_FILE
 

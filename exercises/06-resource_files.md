@@ -6,9 +6,9 @@ existing test case from `login.robot` test suite to `invalid_login.robot`.
 <details>
     <summary>So your <code>invalid_login.robot</code> could look something like this</summary>
 
-```
+```robot
 *** Settings ***
-Library    SeleniumLibrary
+Library    Browser
 
 *** Variables ***
 ${URL}=    http://localhost:7272
@@ -23,28 +23,28 @@ Error Page Should Be Visible After Successful Login
     Enter Password    ${SPACE*2}
     Submit Login Form
     Verify That Error Page Is Visible
-    [Teardown]    Close Browser
 
 *** Keywords ***
 
 Open Browser To Login Page
-    Open Browser    ${URL}   browser=ff
+    New Browser    headless=${FALSE}
+    New Page    ${URL}
 
 Enter Username
     [Arguments]    ${username}
-    Input Text    id=username_field    ${username}
+    Fill Text    id=username_field    ${username}
 
 Enter Password
     [Arguments]    ${password}
-    Input Password    id=password_field    ${password}
+    Fill Secret    id=password_field    $password
 
 Submit Login Form
-    Click Element    id=login_button
+    Click    id=login_button
 
 Verify That Error Page Is Visible
-    Page Should Contain    Error Page
-    Location Should Be    ${URL}/error.html
-    Title Should Be    Error Page
+    Get Text    body    contains    Error Page
+    Get Url    ==    ${URL}/error.html
+    Get Title    ==    Error Page
 ```
 
 </details>
@@ -55,18 +55,20 @@ Usually we don't want to repeat ourselves that much, since it makes maintenance 
 To ease out maintenance we can use resource files:
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#resource-and-variable-files
 
-The biggest difference between resource files and test suite files is that in a resource file you don't have the
-`*** Test Cases ***` or `*** Tasks ***` table.
+The biggest difference between resource files and test suite files is that in a resource file you
+don't have the `*** Test Cases ***` or `*** Tasks ***` table. It is [recommended](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#taking-resource-files-into-use)
+to use a `.resource` extension with resource files (instead of the otherwise used `.robot`). This is
+just for separating resource files from test files. The functionality will remain the same.
 
-So let's create our `resource.robot` file under `robot`.
+So let's create our `common.resource` file under `robot`.
 
 Now do a cross-check between `login.robot` and `invalid_login.robot`. Find the duplicate keywords from
-`login.robot` and `invalid_login.robot` and move them to `resource.robot`. Remove these keywords from
+`login.robot` and `invalid_login.robot` and move them to `common.resource`. Remove these keywords from
 `login.robot` and `invalid_login.robot`.
 
-Now run the command `robot robot` to run all suites and you may notice some errors.
+Now run the command `robot robot` to run all suites. You may notice some errors.
 
-```
+```text
 =============================================================================
 Login & Invalid Login
 ==============================================================================
@@ -98,31 +100,31 @@ Login & Invalid Login                                                 | FAIL |
 ==============================================================================
 ```
 
-Why is that? We've it in our `resource.robot`, right?
+Why is that? We have the keywords in our `common.resource`, right?
 
 The reason is the same that we had with non `Builtin` Libraries. We need to tell the Robot Framework
-to use our `resource.robot` in our test suite.
+to use our `common.resource` in our test suite.
 
-That's why you need to add `Resources` 4 spaces `<resource_name>` to your `*** Settings ***` table in
+That's why you need to add `Resources` four spaces `<resource_name>` to your `*** Settings ***` table in
 your test suite file. Resource files can also resource other resource files.
 
 Let's modify the `login.robot` settings table by adding the `Resource` option there.
 
-```
+```robot
 *** Settings ***
-Library    SeleniumLibrary
-Resource    resource.robot
+Library    Browser
+Resource    common.resource
 ```
 
 Now, when you run `robot robot/login.robot`, the tests should pass again.
 
 Add missing `Resource` option to `robot/invalid_login.robot` file as well and ensure your tests are passing.
 
-Create 2 more test cases that uses 2 different combination of invalid credentials to `invalid_login.robot`.
+Create two more test cases that use two different combination of invalid credentials to `invalid_login.robot`.
 
 When the tests pass run the following command to ensure that changes are done in right manner run:
 
-  - Windows: double click the `06-resource_files.cmd`
-  - Linux/macOS: run `./exercises/verify/06-resource_files.sh`
+- Windows: double-click the `06-resource_files.cmd`
+- Linux/macOS: run `./exercises/verify/06-resource_files.sh`
 
-If you see `Ready to proceed!` then you're done for the exercise. Otherwise check the output and fix, rerun.
+If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.
