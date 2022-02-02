@@ -91,10 +91,6 @@ Then we can refactor both test cases by adding that part to test setup with `[Se
 Now the test cases should look something like this:
 
 ```robot
-Welcome Page Should Be Visible After Successful Login
-    [Setup]    Do Successful Login
-    # rest of the implementation
-
 Login Form Should Be Visible After Successful Logout
     [Setup]    Do Successful Login
     # rest of the implementation

@@ -10,14 +10,15 @@ class TestSettingsCheck(TestRule):
     def apply(self, test):
         report = True
         settings = []
-        expected_settings = [SUCCESSFUL_LOGIN]
+        expected_settings = []
         for setting in test.settings:
             settings.append(normalize(setting[2]))
         if normalize(test.name) == "Welcome Page Should Be Visible After Successful Login":
             expected_settings.append(SUCCESSFUL_LOGOUT)
-            if SUCCESSFUL_LOGIN in settings:
+            if SUCCESSFUL_LOGOUT in settings:
                 report = False
         elif normalize(test.name) == "Login Form Should Be Visible After Successful Logout":
+            expected_settings.append([SUCCESSFUL_LOGIN])
             if SUCCESSFUL_LOGIN in settings:
                 report = False
         if report:

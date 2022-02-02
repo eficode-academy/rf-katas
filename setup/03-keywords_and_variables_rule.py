@@ -38,10 +38,14 @@ class GlobalVariablesShouldBeUpperCase(GeneralRule):
     severity = WARNING
 
     def apply(self, robot_file):
-        table = list(filter(lambda t: t.name.lower() == "variables", robot_file.tables))[0]
-        for row in table.rows:
-            if row.cells[0] != row.cells[0].upper():
-                self.report(robot_file, f"Variables in the \"Variables\" table should be UPPER CASE: {row.cells[0]}", row.linenumber)
+        table = list(filter(lambda t: t.name.lower() == "variables", robot_file.tables))
+        if table:
+            table=table[0]
+            for row in table.rows:
+                if row.cells[0] != row.cells[0].upper():
+                    self.report(robot_file, f"Variables in the \"Variables\" table should be UPPER CASE: {row.cells[0]}", row.linenumber)
+        else:
+            self.report(robot_file, "login.robot is missing variables table.", 0)
 
 class TestCaseImplementation(TestRule):
     severity = ERROR
