@@ -40,6 +40,10 @@ your code consistently.
 
 Install Robot Framework linter: `pip3 install robotframework-lint`.
 
+## Install NodeJS
+
+Browser library has requirements for NodeJS. After installing NodeJS run command: `rfbrowser init` to install needed dependencies.
+
 ## Start server
 
 In order to run the exercises in this training, you need to start the demo app. You can start the server
