@@ -1,2 +1,3 @@
-python ../../setup/04-setups_and_teardowns.py
+cd ..\..\
+python setup/04-setups_and_teardowns.py
 PAUSE

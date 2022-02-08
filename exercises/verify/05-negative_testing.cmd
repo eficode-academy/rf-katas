@@ -1,2 +1,3 @@
-python ../../setup/05-negative_testing.py
+cd ..\..\
+python setup/05-negative_testing.py
 PAUSE
