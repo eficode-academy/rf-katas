@@ -12,6 +12,7 @@ robot/*
 *.xml
 geckodriver-*.log
 setup/*.txt
+playwright-log.txt
 
 #OS
 
