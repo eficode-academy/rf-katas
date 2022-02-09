@@ -7,26 +7,25 @@ Let us first go through our System Under Testing (SUT) before we proceed.
 
 ## System Under Testing (SUT)
 
-Our system under testing is simple web application that is running at localhost:7272 address.
+Our SUT is simple web application that is running at localhost:7272 address.
 
 Features:
 
 - Index page contains login form
-  - Username: demo
-  - Password: mode
+  - Username: `demo`
+  - Password: `mode`
   - Submit login form button
 - After successful login the user is redirected to the welcome page
   - User can log out after successful login and will be redirected to the login page
 - After incorrect login credentials the user is redirected to the error page
 
-## Exercise 1
+## Exercise
 
-How would you test the successful login use case?
+How would you manually test the successful login use case?
 
-In the root directory of the rf-katas project create a `robot` folder. Inside it add a text file, call
-it `login.robot` (note that `.robot` is the extension, not `.txt`).
-
-Write line by line, all the steps that you would need to perform if you were manually testing the login feature.
+- In the root directory of the rf-katas project create a `robot` folder.
+- Inside it add a text file, call it `login.robot` (note that `.robot` is the extension, not `.txt`).
+- Write line by line, all the steps that you would need to perform if you were manually testing the login feature.
 
 ## Verify your results
 
