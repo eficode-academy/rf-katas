@@ -17,6 +17,13 @@ used frequently in this ecosystem.
 - *keyword* - a component, similar to a function in programming, that robot uses to execute steps
 - *arguments* - Values that are given to keywords. Also known as parameters.
 
+## Get the Repository
+
+Clone the repository or download and extract the repository ZIP to your local machine. All exercises will be completed using the
+local copy of the repo.
+
+![Clone the repository](img/clone_repo.png)
+
 ## Install Robot Framework
 
 In order to run Robot Framework test cases we're going to need install Robot Framework. We install this by
