@@ -183,7 +183,7 @@ As it happens, a browser opens headless by default.
 We don't need to touch the context, so we will let run with default values. However,
 we want to open a browser in a headful state, we'll have to call the `New Browser` separately
 (before calling `New Page`) with a specific argument defining this: `headless=${FALSE}`. This is called a
-keyword **argument**. Keyword arguments are added to the same line as the keyword each keyword separated by
+keyword **argument**. Keyword arguments are added to the same line as the keyword each argument separated by
 (preferably) 4 spaces. For example, imagine we have a keyword called `Add` which takes two arguments `arg1` and `arg2`,
 we can call it by using either of the following:
 
