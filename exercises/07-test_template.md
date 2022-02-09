@@ -47,25 +47,32 @@ Verify That Error Page Is Visible
 So, basically what most of us did was copy-paste the first test several times, change the test names
 and change the entered usernames and passwords. The tests do test different things and work well, but it
 doesn't really make sense to copy-paste several lines and modify 2 parameters. Instead, we should use
-test templates: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-templates
+[test templates](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-templates).
 
-So far we've been doing so-called workflow tests. Test templates are so-called data driven tests, which are
+So far we've been doing so-called workflow tests. Test templates are so-called **data driven tests**, which are
 applicable when you need to run the same test, multiple times, every time with a couple of slightly altered arguments.
 
-Let's get started. Rename the first test case to `Template Error Page Is Visible When Using Incorrect Credentials`
+## Exercise
+
+- Rename the first test case to `Template Error Page Is Visible When Using Incorrect Credentials`
 and move it from the `Test Cases` table under the `Keywords` table.
 
 The `Template Error Page Is Visible When Using Incorrect Credentials` keyword starts with a
 `Open Browser to Login Page`-keyword. This repeats in every test while it's not really part of the testing.
-We can get rid of the repetitive keyword by adding it as `Test Setup` into our `Settings` table.
-After that we can delete those the line from `Template Error Page Is Visible When Using Incorrect Credentials`.
-A similar addition could be done with teardowns and the `Test Teardown` setting.
+We can get rid of the repetitive keyword by adding it as `Test Setup` into our `Settings` table. Test setup in
+the settings table acts in the same way as the `[Setup]` defined to our valid login test case. However, when
+put into the settings table it means the setup is the same for all test cases in the test suite and you don't
+need to add `[Setup]` to all test cases individually. The same applies for the `Test Teardown` and `[Teardown]`.
 
-Also remember to add arguments for `Template Error Page Is Visible When Using Incorrect Credentials`.
+- Add `Test Setup` to your settings table and add `Open Browser To Login Page` as the test setup.
+- Remove `Open Browser To Login Page` from your `Template Error Page Is Visible When Using Incorrect Credentials`.
+- Add arguments for username and password for your template keyword.
 
 *Pro-tip:* A keyword can take multiple arguments when separating them with 4 spaces.
 
-So now our `Settings` table should look like this:
+<details>
+
+<summary>So now our `Settings` table should look like this</summary>
 
 ```robot
 *** Settings ***
@@ -74,7 +81,10 @@ Resource    common.resource
 Test Setup    Open Browser To Login Page
 ```
 
-And `Keywords` table like this:
+</details>
+
+<details>
+<summary>And `Keywords` table like this</summary>
 
 ```robot
 *** Keywords ***
@@ -91,15 +101,17 @@ Template Error Page Is Visible When Using Incorrect Credentials
     Verify That Error Page Is Visible
 ```
 
+</details>
+
 Now we've prepared our suite to get ready for data driven tests. Let's add the final piece to the `Settings` table.
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#data-driven-style
 
-Add `Test Template` to the `Settings` table. Value for this setting should be
+- Add `Test Template` to the `Settings` table. Value for this setting should be
 `Template Error Page Is Visible When Using Incorrect Credentials`.
+- Remove all your test cases from `invalid_login.robot` test suite.
 
-We can then remove all of our existing test cases from `invalid_login.robot` test suite.
-
-Our `Settings` table should look like this:
+<details>
+<summary>Our `Settings` table should look like this:</summary>
 
 ```robot
 *** Settings ***
@@ -108,6 +120,8 @@ Resource    common.resource
 Test Setup    Open Browser To Login Page
 Test Template    Template Error Page Is Visible When Using Incorrect Credentials
 ```
+
+</details>
 
 Let's create our very first data driven test case.
 
@@ -123,10 +137,13 @@ Empty Username Empty Password    ${EMPTY}    ${EMPTY}
 *Note:* the commented line (one starting with `#`) isn't required. It's there merely to server as a
 header for the test case table to enhance readability.
 
+- Add a test case followed and on the same line add 4 spaces a username and 4 spaces and password.
+
 Now run `robot robot/invalid_login.robot` command to verify that changes are done correctly.
 
-Now let's create 4 more test cases. Just add new line `<name of the test case> 4 spaces <username> 4 spaces <password>`
-and voilà. We've now a new test case.
+- Create 4 more test cases with different values for username and password.
+
+## Verification
 
 Once you've implemented all 5 test cases run:
 
