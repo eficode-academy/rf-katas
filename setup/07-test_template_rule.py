@@ -16,7 +16,7 @@ class TestTemplateInUse(SuiteRule):
             if setting[0].lower() == "test template":
                 is_test_template = True
                 if normalize(setting[1]) != ALLOWED_KEYWORDS[0]:
-                    self.report(suite, f"Did you add correct keyword for test template?, expected: {ALLOWED_KEYWORDS[1]}", 0)
+                    self.report(suite, f"Did you add correct keyword for test template?, expected: {ALLOWED_KEYWORDS[0]}", 0)
         if not is_test_template:
             self.report(suite, "Did you remember to add Test Template option?", 0)
 
