@@ -49,7 +49,7 @@ and change the entered usernames and passwords. The tests do test different thin
 doesn't really make sense to copy-paste several lines and modify 2 parameters. Instead, we should use
 [test templates](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-templates).
 
-So far we've been doing so-called workflow tests. Test templates are so-called **data driven tests**, which are
+So far we've been doing so-called workflow tests. Test templates are so-called **data-driven tests**, which are
 applicable when you need to run the same test, multiple times, every time with a couple of slightly altered arguments.
 
 ## Exercise
