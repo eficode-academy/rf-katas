@@ -4,7 +4,7 @@
     <summary>In the previous exercise we created <code>robot/login.robot</code> file and the content was most likely something like this</summary>
 
 ```text
-New page
+Open browser
 Navigate to localhost:7272
 Enter username
 Enter password
@@ -62,7 +62,7 @@ Using the snippet from earlier we should get output:
 ==============================================================================
 Login
 ==============================================================================
-New page                                                              | FAIL |
+Open browser                                                          | FAIL |
 Test case contains no keywords.
 ------------------------------------------------------------------------------
 Navigate to localhost:7272                                            | FAIL |
@@ -96,12 +96,18 @@ In order to make Robot understand that want to have 1 test case with 6 steps we 
 *** Test Cases ***
 
 Welcome Page Should Be Visible After Successful Login
-    New Page
+    Open browser
     ...
 ```
 
+If we take a closer look at the Browser library documentation, we notice that there isn't
+a keyword called `Open browser`. However, there is a keyword called
+[`New Page`](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page),
+which does exactly what we want. Let's change our `Open browser` to that.
+
 - Define a test case called `Welcome Page Should Be Visible After Successful Login`.
 - Indent all the manual steps you had written by 4 spaces, so that they are part of your test case.
+- Replace your `Open browser` step to be `New Page`.
 
 Note that keywords are actually case-insensitive, so `new page`, `NEW PAGE`, `New page`,
 and `NeW pAgE` will all work. However, the recommended way is to capitalize the first letter of
@@ -125,9 +131,7 @@ Login                                                                 | FAIL |
 
 ### Test Libraries
 
-Robot now fails with `No keyword with name 'New Page' found.` but if we check the installed
-Browser-library's documentation, we can see that there is in fact a keyword named
-[`New Page`](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page). So _why_ doesn't
+Wait a minute... We just checke that `New Page` is a keyword in the Browser library. So _why_ doesn't
 it show up?
 
 This is because Robot Framework has built-in libraries that come along when you run `pip install robotframework` and
