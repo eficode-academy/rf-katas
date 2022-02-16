@@ -170,6 +170,7 @@ of hard coded values.
 
 - Consider what other values could be implemented as variables, add them to your variables table and
 replace hard-coded values in your test case or keyword with the variable.
+    - For example the credentials and/or different locators could be implemented as variables.
 
 Once you've done those, run the `robot robot/login.robot` to verify that changes are done correctly.
 
