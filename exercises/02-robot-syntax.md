@@ -131,7 +131,7 @@ Login                                                                 | FAIL |
 
 ### Test Libraries
 
-Wait a minute... We just checke that `New Page` is a keyword in the Browser library. So _why_ doesn't
+Wait a minute... We just checked that `New Page` is a keyword in the Browser library. So _why_ doesn't
 it show up?
 
 This is because Robot Framework has built-in libraries that come along when you run `pip install robotframework` and
