@@ -123,7 +123,7 @@ test suite, we need to create a `*** Variables ***` table.
 Defining variables can be done with the following syntax:
 
 ```robot
-${VARIABLE_NAME} =    variable value
+${VARIABLE NAME} =    variable value
 ```
 
 The `=` is optional and can be removed if you don't want to use it. You still need to have two or more
