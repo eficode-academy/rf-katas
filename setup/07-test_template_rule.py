@@ -3,7 +3,7 @@ from rflint.common import KeywordRule, SuiteRule, ERROR
 from static import normalize
 
 ALLOWED_KEYWORDS = [
-    'Template Error Page Is Visible When Using Incorrect Credentials',
+    'Error Page Is Visible When Using Incorrect Credentials',
     'Verify That Error Page Is Visible'
 ]
 

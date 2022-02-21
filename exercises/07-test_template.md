@@ -54,10 +54,10 @@ applicable when you need to run the same test, multiple times, every time with a
 
 ## Exercise
 
-- Rename the first test case to `Template Error Page Is Visible When Using Incorrect Credentials`
+- Rename the first test case to `Error Page Is Visible When Using Incorrect Credentials`
 and move it from the `Test Cases` table under the `Keywords` table.
 
-The `Template Error Page Is Visible When Using Incorrect Credentials` keyword starts with a
+The `Error Page Is Visible When Using Incorrect Credentials` keyword starts with a
 `Open Browser to Login Page`-keyword. This repeats in every test while it's not really part of the testing.
 We can get rid of the repetitive keyword by adding it as `Test Setup` into our `Settings` table. Test setup in
 the settings table acts in the same way as the `[Setup]` defined to our valid login test case. However, when
@@ -65,7 +65,7 @@ put into the settings table it means the setup is the same for all test cases in
 need to add `[Setup]` to all test cases individually. The same applies for the `Test Teardown` and `[Teardown]`.
 
 - Add `Test Setup` to your settings table and add `Open Browser To Login Page` as the test setup.
-- Remove `Open Browser To Login Page` from your `Template Error Page Is Visible When Using Incorrect Credentials`.
+- Remove `Open Browser To Login Page` from your `Error Page Is Visible When Using Incorrect Credentials`.
 - Add arguments for username and password for your template keyword.
 
 *Pro-tip:* A keyword can take multiple arguments when separating them with 4 spaces.
@@ -93,7 +93,7 @@ Verify That Error Page Is Visible
     Get Url    ==    ${URL}/error.html
     Get Title    ==    Error Page
 
-Template Error Page Is Visible When Using Incorrect Credentials
+Error Page Is Visible When Using Incorrect Credentials
     [Arguments]    ${username}    ${password}
     Enter Username    ${username}
     Enter Password    ${password}
@@ -107,7 +107,7 @@ Now we've prepared our suite to get ready for data driven tests. Let's add the f
 http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#data-driven-style
 
 - Add `Test Template` to the `Settings` table. Value for this setting should be
-`Template Error Page Is Visible When Using Incorrect Credentials`.
+`Error Page Is Visible When Using Incorrect Credentials`.
 - Remove all your test cases from `invalid_login.robot` test suite.
 
 <details>
@@ -118,7 +118,7 @@ http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#dat
 Library    Browser
 Resource    common.resource
 Test Setup    Open Browser To Login Page
-Test Template    Template Error Page Is Visible When Using Incorrect Credentials
+Test Template    Error Page Is Visible When Using Incorrect Credentials
 ```
 
 </details>
