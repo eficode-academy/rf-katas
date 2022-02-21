@@ -12,7 +12,7 @@ This can be made possible by using
 
 With user defined keywords we can create abstraction layers when needed. A general rule of thumb is that
 library and resource keywords are "general sounding" ones and keywords in test suite files are more
-test context specific.
+context-specific for the test.
 
 <details>
     <summary>From previous exercises we should have something like this in our <code>robot/login.robot</code></summary>
