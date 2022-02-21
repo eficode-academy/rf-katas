@@ -12,7 +12,7 @@ This can be made possible by using
 
 With user defined keywords we can create abstraction layers when needed. A general rule of thumb is that
 library and resource keywords are "general sounding" ones and keywords in test suite files are more
-test context specific.
+context-specific for the test.
 
 <details>
     <summary>From previous exercises we should have something like this in our <code>robot/login.robot</code></summary>
@@ -127,7 +127,7 @@ ${VARIABLE_NAME} =    variable value
 ```
 
 The `=` is optional and can be removed if you don't want to use it. You still need to have two or more
-(preferably at least four) spaces between `${VARIABLE_NAME}` and `variable value`.
+(preferably at least four) spaces between `${VARIABLE NAME}` and `variable value`.
 
 *NOTE:* If you use `=` between the variable name and value, ensure you use **1 space at maximum** between the
 variable name and `=`. Otherwise the `=` is considered to be a part of the variable value.
@@ -170,6 +170,7 @@ of hard coded values.
 
 - Consider what other values could be implemented as variables, add them to your variables table and
 replace hard-coded values in your test case or keyword with the variable.
+    - For example the credentials and/or different locators could be implemented as variables.
 
 Once you've done those, run the `robot robot/login.robot` to verify that changes are done correctly.
 
