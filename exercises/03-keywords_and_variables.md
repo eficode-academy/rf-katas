@@ -127,7 +127,7 @@ ${VARIABLE_NAME} =    variable value
 ```
 
 The `=` is optional and can be removed if you don't want to use it. You still need to have two or more
-(preferably at least four) spaces between `${VARIABLE_NAME}` and `variable value`.
+(preferably at least four) spaces between `${VARIABLE NAME}` and `variable value`.
 
 *NOTE:* If you use `=` between the variable name and value, ensure you use **1 space at maximum** between the
 variable name and `=`. Otherwise the `=` is considered to be a part of the variable value.
