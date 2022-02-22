@@ -9,6 +9,7 @@ robot/*
 *.log
 *.jpg
 *.png
+!exercises/img/clone_repo.png
 *.xml
 geckodriver-*.log
 setup/*.txt

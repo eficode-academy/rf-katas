@@ -4,7 +4,7 @@
     <summary>In the previous exercise we created <code>robot/login.robot</code> file and the content was most likely something like this</summary>
 
 ```text
-New page
+Open browser
 Navigate to localhost:7272
 Enter username
 Enter password
@@ -24,7 +24,7 @@ or
 
 The reason is that this is not in Robot syntax.
 
-Check out Robot Framework user guide: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-data
+Check out Robot Framework user guide: [Creating test data](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-data).
 
 ## Terminology
 
@@ -33,16 +33,26 @@ Each table starts with `***` and ends with `***`.
 
 There are 5 types of tables:
 
-- `*** Settings ***` - to define libraries, resources, suite/test setups, documentation etc. http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-available-settings-in-test-data
-- `*** Variables ***` - to define suite level variables http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variable-section
-- `*** Keywords ***` - user defined keywords http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords
-- `*** Test Cases ***` - All the suite (file) test cases goes below this one http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-syntax
-- `*** Tasks ***` - http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-tasks
+- `*** Settings ***` - to define libraries, resources, suite/test setups, documentation, etc:
+[See all available settings](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-available-settings-in-test-data).
+- `*** Variables ***` - to define suite level variables:
+[See different variables](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variable-section).
+- `*** Keywords ***` - user defined keywords:
+[See creating keywords](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords).
+- `*** Test Cases ***` - All the suite (file) test cases goes below this one:
+[See test case syntax](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-syntax).
+- `*** Tasks ***` - Alternative to test cases, used in Robotic Process Automation (RPA):
+[See creating tasks](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-tasks).
 
-Check the Robot Framework syntax guide for more details: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-data-syntax
+For more details, check the Robot Framework user guide about
+[test data syntax](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-data-syntax).
+
+## Exercise
 
 In order to fix the Robot output from `robot/login.robot`, let's add the missing test case table
-`*** Test Cases ***` to define we have test cases in the file. This tells Robot that the file contains a test suite.
+`*** Test Cases ***` to define we have test cases in the file. This tells Robot that the file contains a **test suite**.
+
+- Add a test case table to your test suite.
 
 Once you've added the test case table let's run the command `robot robot/login.robot`
 
@@ -52,7 +62,7 @@ Using the snippet from earlier we should get output:
 ==============================================================================
 Login
 ==============================================================================
-New page                                                              | FAIL |
+Open browser                                                          | FAIL |
 Test case contains no keywords.
 ------------------------------------------------------------------------------
 Navigate to localhost:7272                                            | FAIL |
@@ -76,7 +86,9 @@ Login                                                                 | FAIL |
 ```
 
 The reason Robot thinks we have 6 test cases is because each unindented line in the `Test Cases` table is
-considered as a new test case.
+considered as a new test case. When a line is indented by 4 spaces, it indicates to Robot that this
+line belongs to the previous unindented line, be it test case, task, or keyword depending on the table it
+belongs. Each indented line is called a **keyword**.
 
 In order to make Robot understand that want to have 1 test case with 6 steps we need to define it like this:
 
@@ -84,26 +96,23 @@ In order to make Robot understand that want to have 1 test case with 6 steps we 
 *** Test Cases ***
 
 Welcome Page Should Be Visible After Successful Login
+    Open browser
+    ...
 ```
 
-Now in order to have the `New Page` we need to define it under the test case and in robot that is done with 4 spaces.
+If we take a closer look at the Browser library documentation, we notice that there isn't
+a keyword called `Open browser`. However, there is a keyword called
+[`New Page`](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page),
+which does exactly what we want. Let's change our `Open browser` to that.
+
+- Define a test case called `Welcome Page Should Be Visible After Successful Login`.
+- Indent all the manual steps you had written by 4 spaces, so that they are part of your test case.
+- Replace your `Open browser` step to be `New Page`.
 
 Note that keywords are actually case-insensitive, so `new page`, `NEW PAGE`, `New page`,
 and `NeW pAgE` will all work. However, the recommended way is to capitalize the first letter of
 each word, like `New Page` in this case. More information can be found from the
 *[How to write good test cases using Robot Framework](https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst#naming)*-guide.
-
-```robot
-*** Test Cases ***
-
-Welcome Page Should Be Visible After Successful Login
-    New Page
-```
-
-With 4 spaces at the beginning of the line indicates to robot that this keyword belongs to test case
-or keyword depending on the table that was defined.
-
-Now add all missing keywords as test step to our `Welcome Page Should Be Visible After Successful Login`
 
 After that run `robot robot/login.robot` and the output should be something like this:
 
@@ -120,11 +129,9 @@ Login                                                                 | FAIL |
 ==============================================================================
 ```
 
-## Test Libraries
+### Test Libraries
 
-Robot now fails with `No keyword with name 'New Page' found.` but if we check the installed
-Browser-library's documentation, we can see that there is in fact a keyword named `New Page`:
-https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page. So _why_ doesn't
+Wait a minute... We just checked that `New Page` is a keyword in the Browser library. So _why_ doesn't
 it show up?
 
 This is because Robot Framework has built-in libraries that come along when you run `pip install robotframework` and
@@ -132,13 +139,17 @@ will work "out of the box" without you having to worry about anything. However, 
 the Browser) are external and provided by the open source community. We need to tell Robot separately
 to use them.
 
-Check the library injection chapter from the user guide: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries
+See the user guide for
+[importing libraries](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries).
 
 So, in order to take Browser into use during runtime we need to add a `*** Settings ***` table and add
 the library definition there.
 
 After `Library` you need to have _at least_ 2 spaces (preferably 4) before defining the library name:
 `Library    SomeLibrary`.
+
+- Add a settings table at the beginning of your test suite.
+- Add a library import to import `Browser`.
 
 Once you've added the `Settings` table and told Robot to use Browser you can run `robot robot/login.robot`
 again and your output should be something like this:
@@ -165,20 +176,28 @@ want to see what is happening during the test.
 Before getting into how to do that, let's explain three important Browser-library concepts: browser,
 context, and page.
 
-- _Browser_ indicates a browser - Chromium (Chrome, Edge, Opera), Firefox, or WebKit (Safari).
-- _Context_ includes cookies, sessions, profile settings etc. A context is opened within a browser.
-- _Page_ is simply a webpage (or a tab) which is opened inside a browser. A page is opened within a context.
+1. _Browser_ indicates a browser - Chromium (Chrome, Edge, Opera), Firefox, or WebKit (Safari).
+2. _Context_ includes cookies, sessions, profile settings etc. A context is opened within a browser.
+3. _Page_ is simply a webpage (or a tab) which is opened inside a browser. A page is opened within a context.
 
 So when we call the `New Page` keyword without any context or browser created, what the keyword actually
 does is that it calls `New Browser` and `New Context` first. These calls are done with default settings.
 As it happens, a browser opens headless by default.
 
-If we want to open a browser in a headful state, we'll have to call the `New Browser` separately
-(before calling `New Page`) with a specific argument defining this: `headless=${FALSE}`. The context
-is still created with default arguments, and at this point there's no need to adjust those.
+We don't need to touch the context, so we will let run with default values. However,
+we want to open a browser in a headful state, we'll have to call the `New Browser` separately
+(before calling `New Page`) with a specific argument defining this: `headless=${FALSE}`. This is called a
+keyword **argument**. Keyword arguments are added to the same line as the keyword each argument separated by
+(preferably) 4 spaces. For example, imagine we have a keyword called `Add` which takes two arguments `arg1` and `arg2`,
+we can call it by using either of the following:
 
-*Pro-tip:* as everything else, arguments can be specified by leaving at least 2 (preferably 4) spaces
-between the keyword and them.
+```robot
+Add    1    2
+Add    arg1=1    arg2=2
+```
+
+- Add a `New Browser` call before `New Page`
+- Add 4 spaces and `headless=${FALSE}` after `New Browser` (on the same line).
 
 Running the tests headful is not necessary for the final test, but it makes debugging a lot easier
 as we then see what the tests are doing.
@@ -191,12 +210,15 @@ So now the test case should look like something like below.
 Welcome Page Should Be Visible After Successful Login
     New Browser    headless=${FALSE}
     New Page
+    ...
 ```
 
 Now, after running the test yet again, a browser will open, but it won't show any page. This is because
-the keyword was called without arguments.
+the `New Page` keyword was called without arguments. We need to add the necessary `url` arguments for `New Page` keyword.
+Since the `url` is the first (and only) argument for `New Page` we can use it without specifying `url=some url`, unlike
+when we had to use `headless=` for `New Browser`.
 
-So now we need to add the necessary arguments for `New Page` keyword: https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page.
+- Add 4 spaces and the URL to our website after the `New Page` keyword (on the same line).
 
 Our `robot/login.robot` file look now something like this (note that all words were capitalized as recommended):
 
@@ -222,16 +244,30 @@ http://localhost:7272.
 Now you can see browser actually opening and accessing to SUT and then failing due to another keyword
 not found exception.
 
-If you have something like `Navigate to localhost:7272` that can be removed since the `New Page` will
+- If you have something like `Navigate to localhost:7272`, remove it since the `New Page` will
 already go to that website.
 
-Your job now is to figure out what Browser-library keywords you can use to input username and password,
-and click the login element.
+- Find 3 appropriate keywords from the
+[keyword documentation](https://marketsquare.github.io/robotframework-browser/Browser.html)
+to fill the username and password and click the login button.
 
-You need to open the source code for the web page to find the element IDs.
+In order to find a value for the `selector` argument of your selected keywords, you need to open
+the source code for the web page to find the element IDs. You can do that by right-clicking anywhere in the page
+and choosing `Inspect`.
 
-To verify that welcome page is visible you can check the page content, URL and title. With the Browser-library,
-verifications (or assertions) can be done in combination with the `Get ...`-keywords, for example `Get Title    ==    Welcome Page`. More information at https://marketsquare.github.io/robotframework-browser/Browser.html#Assertions.
+To verify that welcome page is visible you can check the page content, URL and/or title. With the Browser-library,
+verifications (or assertions) can be done in combination with the `Get ...`-keywords,
+For example all the following assertions verify that the `title` is `Welcome Page`:
+
+```robot
+Get Title    ==    Welcome Page
+Get Title    Equals    Welcome Page
+Get Title    Should Be    Welcome Page
+```
+
+See more information from supported [assertions](https://marketsquare.github.io/robotframework-browser/Browser.html#Assertions).
+
+- Add an assertion for your test case to verify your test lands on the welcome page.
 
 After you've successfully run the test case with `robot robot/login.robot` you should see output like this:
 
@@ -246,6 +282,8 @@ Login                                                                 | PASS |
 1 test total, 1 passed, 0 failed
 ==============================================================================
 ```
+
+### Verification
 
 After you've made the test pass, ensure that it's done with right manner by running:
 
