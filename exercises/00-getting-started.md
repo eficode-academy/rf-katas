@@ -29,14 +29,13 @@ local copy of the repo.
 ## Install Robot Framework
 
 In order to run Robot Framework test cases we're going to need install Robot Framework. We install this by
-using `pip`. By default, the installation happens by calling `pip3 install <package_name>`, but if you are
+using `pip`. Usually you install something by calling `pip3 install <package_name>`, but if you are
 using a virtual environment, or have an alias defined, you can try `pip install <package_name>` instead.
 
 Install Robot Framework: `pip3 install robotframework`.
 
-If the installation was successful, you can use `robot -h` command to verify that you get command line
-help for Robot Framework. Output should include Robot version number and some other helpful stuff,
-including the command line options (which are also available in [here](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options)).
+To check that it was installed, run the `robot --help` command. The output should include Robot Framework version number and some other helpful stuff,
+including the command line options (which are also available [here](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options)).
 
 To run automated test cases for web UIs, the current go-to library is the Browser-library.
 
