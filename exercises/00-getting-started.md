@@ -28,29 +28,31 @@ local copy of the repo.
 
 ## Install Robot Framework
 
+### Using `pip`
 In order to run Robot Framework test cases we're going to need install Robot Framework. We install this by
 using `pip`. Usually you install something by calling `pip3 install <package_name>`, but if you are
 using a virtual environment, or have an alias defined, you can try `pip install <package_name>` instead.
 
-Install Robot Framework: `pip3 install robotframework`.
+### Installing Robot Framework
+Run `pip3 install robotframework`
 
 To check that it was installed, run the `robot --help` command. The output should include Robot Framework version number and some other helpful stuff,
 including the command line options (which are also available [here](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options)).
 
-To run automated test cases for web UIs, the current go-to library is the Browser-library.
-
-Install Browser: `pip3 install robotframework-browser`. After the installation has completed successfully,
-the library has to be initialized by running `rfbrowser init`.
-
-In order to ensure that you've done exercises as expected we need you to install robotframework-lint
+### Consistency Helper
+In order to ensure that you've done exercises as expected let's install the "robotframework-lint"
 tool. A linting tool is a lightweight static analysis tool to verify that you and your team are doing
 your code consistently.
 
-Install Robot Framework linter: `pip3 install robotframework-lint`.
+To install the linter, run `pip3 install robotframework-lint`
 
-## Install NodeJS
+### Testing in the Browser
+Robot Framework can test anything if you give it the right library. To run automated test cases for web UIs, we'll use the "Browser" library.
 
-Browser library has requirements for NodeJS. After installing NodeJS run command: `rfbrowser init` to install needed dependencies.
+To install this "Browser" library, run `pip3 install robotframework-browser`
+
+After the installation has completed successfully,
+the library has to be initialized by running `rfbrowser init`—you'll need [Node.js installed](https://nodejs.org/en/download/). It will take a a minute or two to run the command.
 
 ## Start server
 
