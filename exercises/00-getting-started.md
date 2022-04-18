@@ -1,7 +1,9 @@
 # Getting started
 
-In this section we will install Robot Framework, needed test libraries and ensure that the environment
-is up and running in order to do web UI testing with Robot Framework.
+In this section we'll 
+ - install Robot Framework
+ - install some needed test libraries
+ - prepare the environment for web UI testing
 
 ## Terminology
 
