@@ -18,14 +18,15 @@ that we're going to need to have the following items installed:
 
 ### Recommended
 
-- In order to make installing with pip easier, use virtualenv (https://virtualenv.pypa.io/en/latest/)
-  - Short instruction to virtualenv use
+#### Use Virtualenv
+[VirtualEnv](https://virtualenv.pypa.io/en/latest/) creates a dependency "sandbox", keeping the rest of your computer clean from any dependencies you install during this tutorial. 
 
-    ```shell
-    pip install virtualenv --user
-    virtualenv <choose_a_folder_name>
-    source <chosen_folder_name>/bin/activate
-    ```
+```shell
+cd <path to repo>
+pip install virtualenv --user
+virtualenv . # initialize a virtual environment in the current folder
+source ./bin/activate
+```
 
 ## Get started
 
