@@ -7,17 +7,17 @@ In this section we'll
 
 ## Terminology
 
-In this section, you will see a lot of Python, operating system and Robot Framework related jargon
+In this section, you will see a lot of Python, operating system, and Robot Framework related jargon
 which might be confusing to some. So before you go further, let's clarify some terminology that is
 used frequently in this ecosystem.
 
-- *pip* - Python package manager, this is a tool that is needed to install Robot Framework and needed test libraries
-- *shell* - The shell is the command interpreter in an operating system such as Unix or GNU/Linux, it is a program that executes other programs
-- *bat / batch file / cmd* - A batch file is a script file in DOS, OS/2 and Microsoft Windows. It consists of a series of commands to be executed by the command-line interpreter, stored in a plain text file.
-- *robot* - The command line tool that allows the user to run Robot Framework test cases and tasks
-- *test suite* - A Robot file that contains test cases
-- *keyword* - a component, similar to a function in programming, that robot uses to execute steps
-- *arguments* - Values that are given to keywords. Also known as parameters.
+- *pip* — Python package manager; this is a tool that is needed to install Robot Framework and needed test libraries.
+- *shell* — The shell is the command interpreter in an operating system such as Unix or GNU/Linux, it is a program that executes other programs. A.K.A.: Terminal, Command Prompt.
+- *bat / batch file / cmd* — A batch file is a script file in DOS, OS/2 and Microsoft Windows. It consists of a series of commands to be executed by the command-line interpreter, stored in a plain text file.
+- *`robot`* — The command line tool that allows the user to run Robot Framework test cases and tasks. 
+- *test suite* — A group of test cases. In Robot Framework, a test suite is contained in single file.
+- *keyword* — A defined step; similar to a function in programming. There are [built-in keywords](https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst#library-keywords) or you can [define your own](https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst#user-keywords).
+- *arguments*  — Values that are given to keywords. Also known as parameters.
 
 ## Get the Repository
 
