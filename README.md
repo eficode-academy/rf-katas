@@ -2,7 +2,7 @@
 
 ## Requirements
 
-In this series of exercises we're going to run several automated tests against web application. To do
+In this series of exercises we're going to run several automated tests against a web application. To do
 that we're going to need to have the following items installed:
 
 - Python (version 3.7 or newer): https://www.python.org/downloads/
@@ -10,7 +10,7 @@ that we're going to need to have the following items installed:
 - Pip for Python 3
   - Windows: https://www.howtogeek.com/197947/how-to-install-python-on-windows/
   - Linux: `sudo apt-get install python3-pip && pip3 install --upgrade pip`
-  - macOS: `brew install python` pip is already included
+  - macOS: `brew install python` (pip is already included)
 - Node.js (version 12 or newer): https://nodejs.org/en/download/
 - System under test
   - Open a new terminal window, change directory to this repository root folder and run the application
