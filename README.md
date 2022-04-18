@@ -30,4 +30,4 @@ source ./bin/activate
 
 ## Get started
 
-After you have installed the requirements check the [Getting started exercise](exercises/00-getting-started.md) and proceed with the exercises.
+After you have installed the requirements, check the [Getting started exercise](exercises/00-getting-started.md) and proceed with the exercises.
