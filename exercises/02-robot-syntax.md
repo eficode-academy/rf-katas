@@ -168,7 +168,7 @@ Login                                                                 | FAIL |
 ```
 
 As the test starts, the `No keyword with name 'New Page' found.` error does not pop up anymore. This
-means that opening a new page now works - or does it? Nothing seems to open. This is because the browser
+means that opening a new page now works — or does it? Nothing seems to open. This is because the browser
 opens by default in a _headless_ state. Headless simply means that the GUI is not visible and the idea
 is to make test performance better. We need to open the browser specifically in a headful state if we
 want to see what is happening during the test.
@@ -176,7 +176,7 @@ want to see what is happening during the test.
 Before getting into how to do that, let's explain three important Browser-library concepts: browser,
 context, and page.
 
-1. _Browser_ indicates a browser - Chromium (Chrome, Edge, Opera), Firefox, or WebKit (Safari).
+1. _Browser_ indicates a browser — Chromium (Chrome, Edge, Opera), Firefox, or WebKit (Safari).
 2. _Context_ includes cookies, sessions, profile settings etc. A context is opened within a browser.
 3. _Page_ is simply a webpage (or a tab) which is opened inside a browser. A page is opened within a context.
 
@@ -184,7 +184,7 @@ So when we call the `New Page` keyword without any context or browser created, w
 does is that it calls `New Browser` and `New Context` first. These calls are done with default settings.
 As it happens, a browser opens headless by default.
 
-We don't need to touch the context, so we will let run with default values. However,
+We don't need to touch the context, so we will let it run with default values. However,
 we want to open a browser in a headful state, we'll have to call the `New Browser` separately
 (before calling `New Page`) with a specific argument defining this: `headless=${FALSE}`. This is called a
 keyword **argument**. Keyword arguments are added to the same line as the keyword each argument separated by
