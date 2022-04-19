@@ -25,8 +25,6 @@ or
 
 The reason is that your steps are not in Robot syntax—yet.
 
-Check out Robot Framework user guide: [Creating test data](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-data).
-
 ## Terminology
 
 Robot files are split into parts and those parts are called tables.
@@ -51,7 +49,7 @@ For more details, check the Robot Framework user guide about
 ## Exercise
 
 In order to fix the Robot output from `robot/login.robot`, let's add the missing test case table
-`*** Test Cases ***` to define we have test cases in the file. This tells Robot that the file contains a **test suite**.
+`*** Test Cases ***` to define that we have test cases in the file. This tells Robot that the file contains a **test suite**.
 
 - Add a test case table to your test suite.
 
