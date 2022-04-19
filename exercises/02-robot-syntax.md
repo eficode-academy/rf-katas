@@ -54,6 +54,8 @@ Let's add the missing `*** Test Cases ***` table header and see how far that get
 
 Once you've added the test case table, let's run the command `robot robot/login.robot`
 
+## Explanation
+
 The snippet from earlier gives this output:
 
 ```text
@@ -99,6 +101,8 @@ Welcome Page Should Be Visible After Successful Login # <-Test Case
     # ... and so on
 ```
 
+## Exercise
+
 If we take a closer look at the Browser library documentation, we notice that there isn't
 a keyword called `Open browser`. However, there is a keyword called
 [`New Page`](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page),
@@ -113,7 +117,7 @@ and `NeW pAgE` will all work. However, the recommended way is to capitalize the 
 each word, like `New Page` in this case. More information can be found from the
 *[How to write good test cases using Robot Framework](https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst#naming)*-guide.
 
-After that run `robot robot/login.robot` and the output should be something like this:
+After that, run `robot robot/login.robot` and the output should be something like this:
 
 ```text
 ==============================================================================
