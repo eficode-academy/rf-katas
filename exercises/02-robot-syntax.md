@@ -142,14 +142,14 @@ provided by the open source community. We need to tell Robot separately to use t
 
 > For more on [importing libraries](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries), see the user guide.
 
-So, in order to take Browser into use during runtime we need to add a `*** Settings ***` table and add
-the library definition there.
+- "Enable" the Browser library, by adding a `*** Settings ***` table and including it there.
 
-After `Library` you need to have _at least_ 2 spaces (preferably 4) before defining the library name:
-`Library    SomeLibrary`.
+```robot
+*** Settings ***
+Library    Browser
+```
 
-- Add a settings table at the beginning of your test suite.
-- Add a library import to import `Browser`.
+ > After `Library` you need to have _at least_ 2 spaces (preferably 4) before defining the library name.
 
 Once you've added the `Settings` table and told Robot to use Browser you can run `robot robot/login.robot`
 again and your output should be something like this:
