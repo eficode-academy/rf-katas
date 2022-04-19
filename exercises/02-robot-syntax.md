@@ -1,7 +1,7 @@
 # Robot Syntax
+In the previous exercise, you wrote some manual instructions in a <code>robot/login.robot</code> file.
 
-<details>
-    <summary>In the previous exercise we created <code>robot/login.robot</code> file and the content was most likely something like this</summary>
+<details><summary>Our Solution</summary>
 
 ```text
 Open browser
@@ -14,7 +14,8 @@ Check that welcome page text is visible
 
 </details>
 
-If you now run command `robot robot/login.robot` you should get something like this:
+
+If you now run the command `robot robot/login.robot`, you should get something like this:
 
 `[ ERROR ] Parsing 'robot/login.robot' failed: File has no tests or tasks.`
 
