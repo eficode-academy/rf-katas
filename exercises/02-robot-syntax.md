@@ -191,9 +191,11 @@ As it happens, a browser opens headless by default.
 We don't need to touch the context, so we will let it run with default values. However,
 we want to open a browser in a headful state, we'll have to call the `New Browser` separately
 (before calling `New Page`) with a specific argument defining this: `headless=${FALSE}`. This is called a
-keyword **argument**. Keyword arguments are added to the same line as the keyword each argument separated by
-(preferably) 4 spaces. For example, imagine we have a keyword called `Add` which takes two arguments `arg1` and `arg2`,
-we can call it by using either of the following:
+keyword _argument_. Keyword arguments are added to the same line as the keyword; each argument is separated by
+(preferably) 4 spaces. 
+
+For example, imagine we have a keyword called `Add` which takes two arguments `arg1` and `arg2`, we can call it 
+by using either of the following:
 
 ```robot
 Add    1    2
@@ -203,7 +205,7 @@ Add    arg1=1    arg2=2
 - Add a `New Browser` call before `New Page`
 - Add 4 spaces and `headless=${FALSE}` after `New Browser` (on the same line).
 
-Running the tests headful is not necessary for the final test, but it makes debugging a lot easier
+Running the tests headfully is not necessary for the final test, but it makes debugging a lot easier
 as we then see what the tests are doing.
 
 So now the test case should look like something like below.
