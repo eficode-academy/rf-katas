@@ -137,10 +137,8 @@ Login                                                                 | FAIL |
 Wait a minute... We just checked that `New Page` is a keyword in the Browser library. So _why_ doesn't
 it show up?
 
-This is because Robot Framework has built-in libraries that come along when you run `pip install robotframework` and
-will work "out of the box" without you having to worry about anything. However, most of the needed libraries (such as
-the Browser) are external and provided by the open source community. We need to tell Robot separately
-to use them.
+This is because Browser isn't one of the _built-in_ libraries; lots of useful libraries are external and 
+provided by the open source community. We need to tell Robot separately to use them.
 
 See the user guide for
 [importing libraries](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries).
