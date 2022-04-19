@@ -52,9 +52,9 @@ Let's add the missing `*** Test Cases ***` table header and see how far that get
 
 - Add a test case table header to your test suite.
 
-Once you've added the test case table let's run the command `robot robot/login.robot`
+Once you've added the test case table, let's run the command `robot robot/login.robot`
 
-Using the snippet from earlier we should get output:
+The snippet from earlier gives this output:
 
 ```text
 ==============================================================================
@@ -86,9 +86,9 @@ Login                                                                 | FAIL |
 The reason Robot thinks we have 6 test cases is because each unindented line in the `Test Cases` table is
 considered as a new test case. When a line is indented by 4 spaces, it indicates to Robot that this
 line belongs to the previous unindented line, be it test case, task, or keyword depending on the table it
-belongs. Each indented line is called a **keyword**.
+belongs to. Each indented line is called a **keyword**.
 
-In order to make Robot understand that want to have 1 test case with 6 steps we need to define it like this:
+In order to make Robot understand that you want to have 1 test case with 6 steps, we need to define it like this:
 
 ```robot
 *** Test Cases ***
