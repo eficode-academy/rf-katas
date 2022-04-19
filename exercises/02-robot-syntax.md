@@ -112,7 +112,7 @@ which does exactly what we want. Let's change our `Open browser` to that.
 - Indent all the manual steps you had written by 4 spaces, so that they are part of your test case.
 - Replace your `Open browser` step to be `New Page`.
 
-Note that keywords are actually case-insensitive, so `new page`, `NEW PAGE`, `New page`,
+> Note that keywords are actually case-insensitive, so `new page`, `NEW PAGE`, `New page`,
 and `NeW pAgE` will all work. However, the recommended way is to capitalize the first letter of
 each word, like `New Page` in this case. More information can be found from the
 *[How to write good test cases using Robot Framework](https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst#naming)*-guide.
@@ -140,8 +140,7 @@ it show up?
 This is because Browser isn't one of the _built-in_ libraries; lots of useful libraries are external and 
 provided by the open source community. We need to tell Robot separately to use them.
 
-See the user guide for
-[importing libraries](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries).
+> For more on [importing libraries](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#importing-libraries), see the user guide.
 
 So, in order to take Browser into use during runtime we need to add a `*** Settings ***` table and add
 the library definition there.
