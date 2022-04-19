@@ -23,7 +23,7 @@ or
 
 `[ ERROR ] Suite 'Login' contains no tests or tasks.`
 
-The reason is that this is not in Robot syntax.
+The reason is that your steps are not in Robot syntax—yet.
 
 Check out Robot Framework user guide: [Creating test data](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-data).
 
@@ -34,15 +34,15 @@ Each table starts with `***` and ends with `***`.
 
 There are 5 types of tables:
 
-- `*** Settings ***` - to define libraries, resources, suite/test setups, documentation, etc:
+- `*** Settings ***` — to define libraries, resources, suite/test setups, documentation, etc:
 [See all available settings](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-available-settings-in-test-data).
-- `*** Variables ***` - to define suite level variables:
+- `*** Variables ***` — to define suite level variables:
 [See different variables](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variable-section).
-- `*** Keywords ***` - user defined keywords:
+- `*** Keywords ***` — user defined keywords:
 [See creating keywords](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords).
-- `*** Test Cases ***` - All the suite (file) test cases goes below this one:
+- `*** Test Cases ***` — groups of steps (a group = a test case):
 [See test case syntax](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-syntax).
-- `*** Tasks ***` - Alternative to test cases, used in Robotic Process Automation (RPA):
+- `*** Tasks ***` — alternative name for test cases table; used in Robotic Process Automation (RPA):
 [See creating tasks](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-tasks).
 
 For more details, check the Robot Framework user guide about
