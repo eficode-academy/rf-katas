@@ -48,10 +48,9 @@ For more details, check the Robot Framework user guide about
 
 ## Exercise
 
-In order to fix the Robot output from `robot/login.robot`, let's add the missing test case table
-`*** Test Cases ***` to define that we have test cases in the file. This tells Robot that the file contains a **test suite**.
+Let's add the missing `*** Test Cases ***` table header and see how far that gets us. This tells the Robot Framework that the file contains a **test suite**.
 
-- Add a test case table to your test suite.
+- Add a test case table header to your test suite.
 
 Once you've added the test case table let's run the command `robot robot/login.robot`
 
