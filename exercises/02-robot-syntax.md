@@ -151,7 +151,7 @@ Library    Browser
 
  > After `Library` you need to have _at least_ 2 spaces (preferably 4) before defining the library name.
 
-Once you've added the `Settings` table and told Robot to use Browser you can run `robot robot/login.robot`
+Once you've added the `Settings` table and told Robot to use Browser, you can run `robot robot/login.robot`
 again and your output should be something like this:
 
 ```text
@@ -220,13 +220,13 @@ Welcome Page Should Be Visible After Successful Login
 ```
 
 Now, after running the test yet again, a browser will open, but it won't show any page. This is because
-the `New Page` keyword was called without arguments. We need to add the necessary `url` arguments for `New Page` keyword.
+the `New Page` keyword was called without arguments. We need to add the necessary `url` arguments for the `New Page` keyword.
 Since the `url` is the first (and only) argument for `New Page` we can use it without specifying `url=some url`, unlike
 when we had to use `headless=` for `New Browser`.
 
 - Add 4 spaces and the URL to our website after the `New Page` keyword (on the same line).
 
-Our `robot/login.robot` file look now something like this (note that all words were capitalized as recommended):
+Our `robot/login.robot` file now looks something like this (note that all words are capitalized as recommended):
 
 ```robot
 *** Settings ***
@@ -244,8 +244,7 @@ Welcome Page Should Be Visible After Successful Login
     Check That Welcome Page Text Is Visible
 ```
 
-*Note:* Make sure that the SUT is running in its own window and that you can access it with address
-http://localhost:7272.
+> *Note:* Make sure that the SUT is running in its own terminal window and that you can manually access it by navigating to http://localhost:7272.
 
 Now you can see browser actually opening and accessing to SUT and then failing due to another keyword
 not found exception.
