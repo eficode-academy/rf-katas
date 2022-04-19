@@ -27,11 +27,11 @@ How would you manually test the successful login use case?
 - Inside it add a text file, call it `login.robot` (note that `.robot` is the extension, not `.txt`).
 - Write line by line, all the steps that you would need to perform if you were manually testing the login feature.
 
-## Verify your results
+## Verify your solution
 
-After you've added steps that you think are needed to manually test login feature run:
+After you've added the steps that you think are needed to manually test the login feature, run:
 
 - Windows: double click `01-manual_testing.cmd`
 - Linux/macOS: `./exercises/verify/01-manual_testing.sh`
 
-If the output is `Ready to proceed!` then you're good to go! Otherwise, the check the output about what is missing?
+If the final output is `Ready to proceed!` then you're good to go! Otherwise, check the output to see what is wrong.
