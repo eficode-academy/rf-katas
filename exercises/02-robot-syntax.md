@@ -93,9 +93,10 @@ In order to make Robot understand that you want to have 1 test case with 6 steps
 ```robot
 *** Test Cases ***
 
-Welcome Page Should Be Visible After Successful Login
-    Open browser
-    ...
+Welcome Page Should Be Visible After Successful Login # <-Test Case
+    Open browser # <-Step
+    Navigate to localhost:7272 # <-Step
+    # ... and so on
 ```
 
 If we take a closer look at the Browser library documentation, we notice that there isn't
