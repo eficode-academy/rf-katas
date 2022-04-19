@@ -216,7 +216,7 @@ So now the test case should look like something like below.
 Welcome Page Should Be Visible After Successful Login
     New Browser    headless=${FALSE}
     New Page
-    ...
+    # ...
 ```
 
 Now, after running the test yet again, a browser will open, but it won't show any page. This is because
