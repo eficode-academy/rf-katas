@@ -246,7 +246,7 @@ Welcome Page Should Be Visible After Successful Login
 
 > *Note:* Make sure that the SUT is running in its own terminal window and that you can manually access it by navigating to http://localhost:7272. If it's not running, start the server by running `python3 server/server.py`
 
-Now you can see browser actually opening and accessing to SUT and then failing due to another keyword
+Now you can see the browser actually opening and  accessing the SUT but then failing due to another keyword
 not found exception.
 
 - If you have something like `Navigate to localhost:7272`, remove it since the `New Page` will
