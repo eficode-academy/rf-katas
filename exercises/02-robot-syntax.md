@@ -23,7 +23,9 @@ or
 
 `[ ERROR ] Suite 'Login' contains no tests or tasks.`
 
-The reason is that your steps are not in Robot syntax—yet.
+The reason is that your steps don't follow Robot Framework syntax—yet.
+
+> We'll cover the main parts of Robot Framework syntax in this guide, but if you ever get stuck, check the ["Test Data" syntax](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-data-syntax) section of the the Robot Framework User Guide.
 
 ## Terminology
 
