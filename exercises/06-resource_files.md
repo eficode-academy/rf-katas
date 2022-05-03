@@ -131,7 +131,7 @@ Now, when you run `robot robot/login.robot`, the tests should pass again.
 
 When the tests pass run the following command to ensure that changes are done in right manner run:
 
-- Windows: double-click the `06-resource_files.cmd`
-- Linux/macOS: run `./exercises/verify/06-resource_files.sh`
+- in Windows: run command `python verify.py 06`
+- in macOS/Linux: run command `python3 verify.py 06`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

@@ -136,7 +136,7 @@ The teardown is defined a similar way as was setup, using the `[Teardown]` optio
 
 To ensure that changes are done in right manner run:
 
-- Windows: double-click the `04-setups_and_teardowns.cmd`
-- Linux/macOS: run `./exercises/verify/04-setups_and_teardowns.sh`
+- in Windows: run command `python verify.py 04`
+- in macOS/Linux: run command `python3 verify.py 04`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

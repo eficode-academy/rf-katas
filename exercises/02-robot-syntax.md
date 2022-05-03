@@ -287,7 +287,7 @@ Login                                                                 | PASS |
 
 After you've made the test pass, ensure that it's done with right manner by running:
 
-- Windows: double click `02-robot_syntax.cmd`
-- Linux/macOS: run `./exercises/verify/02-robot_syntax.sh`
+- in Windows: run command `python verify.py 02`
+- in macOS/Linux: run command `python3 verify.py 02`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.
