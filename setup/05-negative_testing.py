@@ -1,7 +1,7 @@
 import os
 import sys
 import subprocess
-from static import INVALID_LOGIN_ROBOT
+from setup.static import INVALID_LOGIN_ROBOT
 
 def check_file_exists():
     if not os.path.isfile(INVALID_LOGIN_ROBOT):

@@ -1,6 +1,6 @@
 import sys
 import subprocess
-from static import LOGIN_ROBOT_FILE
+from setup.static import LOGIN_ROBOT_FILE
 
 def run_linting():
     try:

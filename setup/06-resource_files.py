@@ -1,7 +1,7 @@
 import os
 import sys
 import subprocess
-from static import ROBOT_ROOT_PATH, INVALID_LOGIN_ROBOT, LOGIN_ROBOT_FILE
+from setup.static import ROBOT_ROOT_PATH, INVALID_LOGIN_ROBOT, LOGIN_ROBOT_FILE
 
 RESOURCE_FILE = os.path.join(ROBOT_ROOT_PATH, "common.resource")
 
