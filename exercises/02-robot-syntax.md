@@ -38,7 +38,7 @@ There are 5 types of tables:
 [See all available settings](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-available-settings-in-test-data).
 - `*** Variables ***` — to define suite level variables:
 [See different variables](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variable-section).
-- `*** Keywords ***` — user defined keywords:
+- `*** Keywords ***` — user-defined keywords:
 [See creating keywords](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-user-keywords).
 - `*** Test Cases ***` — groups of steps (a group = a test case):
 [See test case syntax](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-syntax).
