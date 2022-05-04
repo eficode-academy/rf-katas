@@ -105,14 +105,14 @@ Welcome Page Should Be Visible After Successful Login # <-Test Case
 
 ## Exercise
 
-If we take a closer look at the Browser library documentation, we notice that there isn't
+If we take a closer look at the [Browser library documentation](https://marketsquare.github.io/robotframework-browser/Browser.html), we notice that there isn't
 a keyword called `Open browser`. However, there is a keyword called
 [`New Page`](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page),
 which does exactly what we want. Let's change our `Open browser` to that.
 
 - Define a test case called `Welcome Page Should Be Visible After Successful Login`.
 - Indent all the manual steps you had written by 4 spaces, so that they are part of your test case.
-- Replace your `Open browser` step to be `New Page`.
+- Replace `Open browser` with Browser's `New Page` keyword.
 
 > Note that keywords are actually case-insensitive, so `new page`, `NEW PAGE`, `New page`,
 and `NeW pAgE` will all work. However, the recommended way is to capitalize the first letter of
