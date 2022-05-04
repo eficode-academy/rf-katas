@@ -30,7 +30,7 @@ The reason is that your steps don't follow Robot Framework syntax—yet.
 ## Terminology
 
 Robot files are split into parts and those parts are called tables.
-Each table starts with `***` and ends with `***`.
+Each table header starts and ends with `***`.
 
 There are 5 types of tables:
 
