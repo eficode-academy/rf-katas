@@ -14,7 +14,6 @@ EXERCISES = {
 }
 
 def main(exercise):
-    os.environ["PYTHONPATH"]="setup" # needed for windows, otherwise we will get error No module named 'static'
     try:
         module = EXERCISES[int(exercise)]
     except:

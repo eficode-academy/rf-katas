@@ -1,7 +1,7 @@
 import os
 import sys
 import subprocess
-from setup.static import INVALID_LOGIN_ROBOT
+from setup.static import INVALID_LOGIN_ROBOT, CURRENT_ENV
 
 def check_file_exists():
     if not os.path.isfile(INVALID_LOGIN_ROBOT):
@@ -10,7 +10,7 @@ def check_file_exists():
 
 def run_linting():
     try:
-        subprocess.run(["rflint", "-A", "setup/05-negative_testing.args", INVALID_LOGIN_ROBOT], check=True)
+        subprocess.run(["rflint", "-A", "setup/05-negative_testing.args", INVALID_LOGIN_ROBOT], check=True, env=CURRENT_ENV)
     except subprocess.CalledProcessError:
         print("Linting failed, check the results, fix and run again")
         sys.exit(1)
