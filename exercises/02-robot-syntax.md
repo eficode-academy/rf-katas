@@ -116,7 +116,7 @@ which does exactly what we want. Let's change our `Open browser` to that.
 
 > Note that keywords are actually case-insensitive, so `new page`, `NEW PAGE`, `New page`,
 and `NeW pAgE` will all work. However, the recommended way is to capitalize the first letter of
-each word, like `New Page` in this case. More information can be found from the
+each word, like `New Page` in this case. More good habits can be found in the
 *[How to write good test cases using Robot Framework](https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst#naming)*-guide.
 
 After that, run `robot robot/login.robot` and the output should be something like this:
