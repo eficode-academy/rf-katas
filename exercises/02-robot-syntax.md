@@ -58,7 +58,7 @@ Once you've added the test case table, let's run the command `robot robot/login.
 
 ## Explanation
 
-The snippet from earlier gives this output:
+Your output should look something like this:
 
 ```text
 ==============================================================================
