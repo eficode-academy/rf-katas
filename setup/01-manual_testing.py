@@ -8,23 +8,39 @@ def check_file_exists():
         print("Double-check that it's in the right place and named correctly and try again.")
         sys.exit(1)
 
-def demonstrate_our_solution():
-    print("Nice job!")
-    print("If you'd like to compare answers, here's our solution:")
-    print("""
-    Open browser
-    Navigate to localhost:7272
-    Enter username
-    Enter password
-    Submit login form
-    Check that welcome page text is visible
-    """)
+def check_content():
+    is_browser = False
+    is_url = False
+    is_password = False
+    is_username = False
+    is_login = False
+    is_welcome = False
+    data = None
+    with open(LOGIN_ROBOT_FILE, "r") as f:
+        data = f.readlines()
+    for line in data:
+        lowered_line = line.lower()
+        if re.search(r"(new|open) (page|browser)", lowered_line):
+            is_browser = True
+        elif re.search(r"localhost:7272", lowered_line):
+            is_url = True
+        elif "username" in lowered_line:
+            is_username = True
+        elif "password" in lowered_line:
+            is_password = True
+        elif "click" in lowered_line or "login" in lowered_line:
+            is_login = True
+        elif "welcome" in lowered_line:
+            is_welcome = True
+    if is_browser and is_url and is_password and is_username and is_login and is_welcome:
+        print("Ready to proceed!")
+    else:
+        print("Not quite there yet! Did you remember browser, username, password or perhaps missing url? Did you verify your login succeeded?")
+        sys.exit(1)
 
 def main():
     check_file_exists()
-    demonstrate_our_solution()
-    print("Ready to proceed!")
-
+    check_content()
 
 
 if __name__ == "__main__":
