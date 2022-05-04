@@ -223,8 +223,8 @@ Welcome Page Should Be Visible After Successful Login
 
 Now, after running the test yet again, a browser will open, but it won't show any page. This is because
 the `New Page` keyword was called without arguments. We need to add the necessary `url` arguments for the `New Page` keyword.
-Since the `url` is the first (and only) argument for `New Page` we can use it without specifying `url=some url`, unlike
-when we had to use `headless=` for `New Browser`.
+Since the `url` is the first (and only) argument for `New Page`, we can use it without specifying 
+`url=some url`, unlike when we had to use `headless=` for `New Browser`.
 
 - Add 4 spaces and the URL to our website after the `New Page` keyword (on the same line).
 
