@@ -48,7 +48,7 @@ There are 5 types of tables:
 For more details, check the Robot Framework user guide about
 [test data syntax](http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-data-syntax).
 
-## Exercise
+## Making a Test Suite
 
 Let's add the missing `*** Test Cases ***` table header and see how far that gets us. This tells the Robot Framework that the file contains a **test suite**.
 
@@ -56,9 +56,9 @@ Let's add the missing `*** Test Cases ***` table header and see how far that get
 
 Once you've added the test case table, let's run the command `robot robot/login.robot`
 
-## Explanation
+## Still Failing?
 
-Your output should look something like this:
+With that change, your output should look something like this:
 
 ```text
 ==============================================================================
