@@ -147,7 +147,7 @@ Now run `robot robot/invalid_login.robot` command to verify that changes are don
 
 Once you've implemented all 5 test cases run:
 
-- Windows: double-click the `07-test_template.cmd`
-- Linux/macOS: run `./exercises/verify/07-test_template.sh`
+- in Windows: run command `python verify.py 07`
+- in macOS/Linux: run command `python3 verify.py 07`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

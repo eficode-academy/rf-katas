@@ -31,7 +31,7 @@ How would you manually test the successful login use case?
 
 After you've added steps that you think are needed to manually test login feature run:
 
-- Windows: double click `01-manual_testing.cmd`
-- Linux/macOS: `./exercises/verify/01-manual_testing.sh`
+- in Windows: run command `python verify.py 01`
+- in macOS/Linux: run command `python3 verify.py 01`
 
 If the output is `Ready to proceed!` then you're good to go! Otherwise, the check the output about what is missing?

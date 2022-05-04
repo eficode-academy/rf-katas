@@ -178,7 +178,7 @@ Once you've done those, run the `robot robot/login.robot` to verify that changes
 
 To ensure that changes are done in right manner run:
 
-- Windows: double-click the `03-keywords_and_variables.cmd`
-- Linux/macOS: run `./exercises/verify/03-keywords_and_variables.sh`
+- in Windows: run command `python verify.py 03`
+- in macOS/Linux: run command `python3 verify.py 03`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

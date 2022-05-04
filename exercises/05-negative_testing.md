@@ -69,7 +69,7 @@ as explained in the documentation.
 
 When the test passes run the following command to ensure that changes are done in right manner run:
 
-- Windows: double-click the `05-negative_testing.cmd`
-- Linux/macOS: run `./exercises/verify/05-negative_testing.sh`
+- in Windows: run command `python verify.py 05`
+- in macOS/Linux: run command `python3 verify.py 05`
 
 If you see `Ready to proceed!` then you're done for the exercise. Otherwise, check the output and fix, rerun.

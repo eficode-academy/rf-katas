@@ -1,12 +1,12 @@
 import sys
 import subprocess
-from static import LOGIN_ROBOT_FILE
+from setup.static import LOGIN_ROBOT_FILE, CURRENT_ENV
 
 
 
 def run_linting():
     try:
-        subprocess.run(["rflint", "-A", "setup/03-keywords_and_variables.args", LOGIN_ROBOT_FILE], check=True)
+        subprocess.run(["rflint", "-A", "setup/03-keywords_and_variables.args", LOGIN_ROBOT_FILE], check=True, env=CURRENT_ENV)
     except subprocess.CalledProcessError:
         print("Linting failed, check the results, fix and run again")
         sys.exit(1)

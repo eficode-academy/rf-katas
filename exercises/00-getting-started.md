@@ -64,8 +64,8 @@ After the server has started it will be running in http://localhost:7272.
 
 Verify setup by running:
 
-- in Windows: double click 00-verify_setup.cmd
-- in macOS/Linux: run command `./exercises/verify/00-verify_setup.sh`
+- in Windows: run command `python verify.py 00`
+- in macOS/Linux: run command `python3 verify.py 00`
 
 This should take a few seconds. If the output of the script ends with `Setup in perfect condition!`
 we're good to go.
