@@ -191,7 +191,7 @@ As it happens, a browser opens headless by default.
 
 ### Getting a "headful" browser
 We don't need to touch the context, so we will let it run with default values. However,
-we want to open a browser in a headful state, we'll have to call the `New Browser` separately
+since we want to open a browser in a headful state, we'll have to call the `New Browser` separately
 (before calling `New Page`) with a specific argument defining this: `headless=${FALSE}`. This is called a
 keyword _argument_. Keyword arguments are added to the same line as the keyword; each argument is separated by
 (preferably) 4 spaces. 
