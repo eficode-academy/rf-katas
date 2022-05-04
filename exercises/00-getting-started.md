@@ -73,6 +73,6 @@ Verify setup by running:
 > If you run into an `ImportError: cannot import name 'get_installed_distributions' from 'pip._internal.utils.misc'` error, the workaround is to downgrade your pip by running, `pip3 install pip==21.2.4`. See [issue #20](https://github.com/eficode-academy/rf-katas/issues/20) for details.
 
 This should take a few seconds. If the output of the script ends with `Setup in perfect condition!`
-we're good to go.
+you're good to go to the [next section](01-manual_testing.md).
 
 Otherwise, check the output and fix the missing packages.

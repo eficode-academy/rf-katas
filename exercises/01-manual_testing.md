@@ -35,3 +35,5 @@ After you've added the steps that you think are needed to manually test the logi
 - Linux/macOS: `./exercises/verify/01-manual_testing.sh`
 
 If the final output is `Ready to proceed!` then you're good to go! Otherwise, check the output to see what is wrong.
+
+When you're ready, move on to the [next section](02-robot-syntax.md).
