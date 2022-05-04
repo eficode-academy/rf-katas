@@ -52,7 +52,7 @@ For more details, check the Robot Framework user guide about
 
 Let's add the missing `*** Test Cases ***` table header and see how far that gets us. This tells the Robot Framework that the file contains a **test suite**.
 
-- Add a test case table header to your test suite.
+- Add a test case table header to the top of your `login.robot` file.
 
 Once you've added the test case table, let's run the command `robot robot/login.robot`
 
