@@ -129,7 +129,7 @@ in that.)
 
 The teardown is defined a similar way as was setup, using the `[Teardown]` option.
 
-- Add a `[Teardown]` to your `Login Form Should Be Visible After Successful Logout` test case.
+- Add a `[Teardown]` to your `Welcome Page Should Be Visible After Successful Login` test case.
 - Call `Do Successful Logout` as the teardown for that test case.
 
 ## Verification
