@@ -67,8 +67,8 @@ After the server has started it will be running in http://localhost:7272.
 
 Verify setup by running:
 
-- in Windows: double click 00-verify_setup.cmd
-- in macOS/Linux: run command `./exercises/verify/00-verify_setup.sh`
+- in Windows: run command `python verify.py 00`
+- in macOS/Linux: run command `python3 verify.py 00`
 
 > If you run into an `ImportError: cannot import name 'get_installed_distributions' from 'pip._internal.utils.misc'` error, the workaround is to downgrade your pip by running, `pip3 install pip==21.2.4`. See [issue #20](https://github.com/eficode-academy/rf-katas/issues/20) for details.
 

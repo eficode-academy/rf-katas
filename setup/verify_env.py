@@ -2,7 +2,7 @@ import sys
 import os
 import subprocess
 from pathlib import Path
-from pip._internal.utils.misc import get_installed_distributions
+import importlib.util
 
 SETUP_DIRECTORY = Path(__file__).resolve().parent
 
@@ -10,28 +10,18 @@ IS_CHROME = False
 IS_FIREFOX = False
 SMOKE_TEST_SUITE = os.path.join(SETUP_DIRECTORY, "verify_setup.robot")
 
-def get_pip_packages():
-    pip_packages = []
-    packages = get_installed_distributions()
-    for package in packages:
-        pip_packages.append(package.project_name)
-    return pip_packages
-
 def check_robot_framework_package():
-    pip_packages = get_pip_packages()
-    if not "robotframework" in pip_packages:
+    if importlib.util.find_spec("robot") is None:
         print("Install Robot Framework: pip install robotframework")
         sys.exit(1)
 
-def check_selenium_library_package():
-    pip_packages = get_pip_packages()
-    if not "robotframework-browser" in pip_packages:
+def check_browser_library_package():
+    if importlib.util.find_spec("Browser") is None:
         print("Install Browser-library: pip install robotframework-browser")
         sys.exit(1)
 
 def check_rflint_package():
-    pip_packages = get_pip_packages()
-    if not "robotframework-lint" in pip_packages:
+    if importlib.util.find_spec("rflint") is None:
         print("Install Robot Framework linter: pip install robotframework-lint")
         print("Linter tool is required for exercise verification")
         sys.exit(1)
@@ -57,7 +47,7 @@ def evaluate_environment():
 
 def main():
     check_robot_framework_package()
-    check_selenium_library_package()
+    check_browser_library_package()
     check_rflint_package()
     check_smoke_suite_location()
     evaluate_environment()

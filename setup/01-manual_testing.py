@@ -1,6 +1,7 @@
 import os
 import sys
-from static import LOGIN_ROBOT_FILE
+import re
+from setup.static import LOGIN_ROBOT_FILE
 
 def check_file_exists():
     if not os.path.isfile(LOGIN_ROBOT_FILE):

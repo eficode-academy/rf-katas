@@ -1,7 +1,7 @@
 import os
 import sys
 import subprocess
-from static import ROBOT_ROOT_PATH, INVALID_LOGIN_ROBOT, LOGIN_ROBOT_FILE
+from setup.static import ROBOT_ROOT_PATH, INVALID_LOGIN_ROBOT, LOGIN_ROBOT_FILE, CURRENT_ENV
 
 RESOURCE_FILE = os.path.join(ROBOT_ROOT_PATH, "common.resource")
 
@@ -13,7 +13,7 @@ def check_file_exists():
 
 def run_linting():
     try:
-        subprocess.run(["rflint", "-A", "setup/06-resource_files.args", INVALID_LOGIN_ROBOT, LOGIN_ROBOT_FILE, RESOURCE_FILE], check=True)
+        subprocess.run(["rflint", "-A", "setup/06-resource_files.args", INVALID_LOGIN_ROBOT, LOGIN_ROBOT_FILE, RESOURCE_FILE], check=True, env=CURRENT_ENV)
     except subprocess.CalledProcessError:
         print("Linting failed, check the results, fix and run again")
         sys.exit(1)
