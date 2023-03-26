@@ -31,7 +31,7 @@ def check_content():
             is_username = True
         if "password" in lowered_line:
             is_password = True
-        if "click" in lowered_line or "login" in lowered_line:
+        if re.search("(log ?in)|button", lowered_line):
             is_login = True
         if "welcome" in lowered_line:
             is_welcome = True
