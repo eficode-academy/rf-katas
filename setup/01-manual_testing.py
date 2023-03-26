@@ -5,8 +5,11 @@ from setup.static import LOGIN_ROBOT_FILE
 
 def check_file_exists():
     if not os.path.isfile(LOGIN_ROBOT_FILE):
-        print(f"login.robot not found under {LOGIN_ROBOT_FILE}, please create one")
+        print(f"❌  Hmm. I don't see your 'login.robot' file. I was expecting to see it at '{LOGIN_ROBOT_FILE}'")
+        print("Double-check that it's in the right place and named correctly and try again.")
         sys.exit(1)
+    else:
+        print("✔️ Found your 'login.robot' file.")
 
 def check_content():
     is_browser = False
