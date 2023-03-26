@@ -23,7 +23,7 @@ def check_content():
         data = f.readlines()
     for line in data:
         lowered_line = line.lower()
-        if re.search(r"(new|open) (page|browser)", lowered_line):
+        if re.search(r"(new|open).+(page|browser|app)", lowered_line):
             is_browser = True
         if re.search(r"localhost:7272", lowered_line):
             is_url = True
