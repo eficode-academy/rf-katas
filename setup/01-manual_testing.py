@@ -52,7 +52,8 @@ def check_content():
     if is_browser and is_url and is_password and is_username and is_login and is_welcome:
         print("✅  Ready to proceed!")
     else:
-        print("❌  Not quite there yet! Did you remember browser, username, password or perhaps missing url? Did you verify your login succeeded?")
+        print("❌  Not quite there yet! Did you remember browser, username, password or perhaps missing url? Did you "
+              "verify your login succeeded and took you to the welcome page?")
         sys.exit(1)
 
 def main():
