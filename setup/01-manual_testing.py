@@ -35,10 +35,24 @@ def check_content():
             is_login = True
         elif "welcome" in lowered_line:
             is_welcome = True
+
+    if is_browser:
+        print("✔️ Found open browser step.")
+    if is_url:
+        print("✔️ Found specific URL in steps.")
+    if is_username:
+        print("✔️ Found mention of username field in steps.")
+    if is_password:
+        print("✔️ Found mention of password field in steps.")
+    if is_login:
+        print("✔️ Found login step.")
+    if is_welcome:
+        print("✔️ Found welcome page step.")
+
     if is_browser and is_url and is_password and is_username and is_login and is_welcome:
-        print("Ready to proceed!")
+        print("✅  Ready to proceed!")
     else:
-        print("Not quite there yet! Did you remember browser, username, password or perhaps missing url? Did you verify your login succeeded?")
+        print("❌  Not quite there yet! Did you remember browser, username, password or perhaps missing url? Did you verify your login succeeded?")
         sys.exit(1)
 
 def main():
