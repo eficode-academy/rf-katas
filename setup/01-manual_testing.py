@@ -25,15 +25,15 @@ def check_content():
         lowered_line = line.lower()
         if re.search(r"(new|open) (page|browser)", lowered_line):
             is_browser = True
-        elif re.search(r"localhost:7272", lowered_line):
+        if re.search(r"localhost:7272", lowered_line):
             is_url = True
-        elif "username" in lowered_line:
+        if "username" in lowered_line:
             is_username = True
-        elif "password" in lowered_line:
+        if "password" in lowered_line:
             is_password = True
-        elif "click" in lowered_line or "login" in lowered_line:
+        if "click" in lowered_line or "login" in lowered_line:
             is_login = True
-        elif "welcome" in lowered_line:
+        if "welcome" in lowered_line:
             is_welcome = True
 
     if is_browser:
