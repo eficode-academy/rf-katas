@@ -1,7 +1,8 @@
 import os
 import sys
 import re
-from setup.static import LOGIN_ROBOT_FILE
+from setup.static import LOGIN_ROBOT_FILE, check_running_in_root
+
 
 def check_file_exists():
     if not os.path.isfile(LOGIN_ROBOT_FILE):
@@ -57,6 +58,7 @@ def check_content():
         sys.exit(1)
 
 def main():
+    check_running_in_root()
     check_file_exists()
     check_content()
 
