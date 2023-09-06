@@ -23,6 +23,7 @@ After you've finished your list let's start implementing one of those.
 - Copy-paste the `Open Browser To Login Page`, `Enter Username`, `Enter Password`, and `Submit Login Form`
 keywords from `login.robot` into `invalid_login.robot`. Normally we would not copy-paste keywords around;
 we will see later on how to achieve this while keeping ourselves [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+- Instead of valid creadentials, use one of the invalid combinations you just created.
 - Create a keyword called `Verify That Error Page Is Visible` to check we've landed on the error page.
 
 Run the test with `robot robot/invalid_login.robot` command to verify the results.

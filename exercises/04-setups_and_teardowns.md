@@ -24,8 +24,8 @@ ${PASSWORD} =    mode
 
 Welcome Page Should Be Visible After Successful Login
     Open Browser To Login Page
-    Enter Username    ${USERNAME}
-    Enter Password    ${PASSWORD}
+    Enter Username
+    Enter Password
     Submit Login Form
     Verify That Welcome Page Is Visible
 
@@ -36,12 +36,10 @@ Open Browser To Login Page
     New Page    ${URL}
 
 Enter Username
-    [Arguments]    ${username}
-    Fill Text    id=username_field    ${username}
+    Fill Text    id=username_field    ${USERNAME}
 
 Enter Password
-    [Arguments]    ${password}
-    Fill Secret    id=password_field    ${password}
+    Fill Secret    id=password_field    ${PASSWORD}
 
 Submit Login Form
     Click    id=login_button
