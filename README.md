@@ -1,30 +1,29 @@
 # Robot Framework katas
 
+In this series of exercises we're going to run several automated tests against web application.
+
 ## Requirements
 
-In this series of exercises we're going to run several automated tests against web application. To do
-that we're going to need to have the following items installed:
+To be able to run the exercises the following items need to be installed:
 
-- Python (version 3.7 or newer): https://www.python.org/downloads/
+- Python (version 3.8 or newer): https://www.python.org/downloads/
   - Remember to add Python folder to PATH environment variable.
 - Pip for Python 3
   - Windows: https://www.howtogeek.com/197947/how-to-install-python-on-windows/
   - Linux: `sudo apt-get install python3-pip && pip3 install --upgrade pip`
   - macOS: `brew install python` pip is already included
-- Node.js (version 12 or newer): https://nodejs.org/en/download/
-- System under test
-  - Open a new terminal window, change directory to this repository root folder and run the application
-    with: `python server/server.py`
+- Node.js (version 18 or newer): https://nodejs.org/en/download/
+  - Required for [Browser library](https://github.com/MarketSquare/robotframework-browser)
 
 ### Recommended
 
-- In order to make installing with pip easier, use virtualenv (https://virtualenv.pypa.io/en/latest/)
-  - Short instruction to virtualenv use
-
+- In order to make installing with pip easier, use python [venv](https://docs.python.org/3/library/venv.html)
+  - Short instruction to venv use
     ```shell
-    pip install virtualenv --user
-    virtualenv <choose_a_folder_name>
-    source <chosen_folder_name>/bin/activate
+    python -m venv <choose_a_folder_name>
+    source <chosen_folder_name>/bin/activate # linux, mac
+    # or 
+    <chosen_folder_name>\Scripts\activate.bat # windows (activate.ps1 on powershell)
     ```
 
 ## Get started
