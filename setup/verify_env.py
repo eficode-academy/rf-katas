@@ -3,6 +3,7 @@ import os
 import subprocess
 from pathlib import Path
 import importlib.util
+import urllib.request
 
 SETUP_DIRECTORY = Path(__file__).resolve().parent
 
@@ -43,13 +44,27 @@ def evaluate_environment():
         sys.exit(1)
 
 
+def check_server_running():
+    demo_app_url = "http://localhost:7272"
+    try:
+        contents = str(urllib.request.urlopen(demo_app_url).read())
+        server_not_running = "<title>Login Page</title>" not in contents
+    except:
+        server_not_running = True
 
+    if server_not_running:
+        print(f"It seems like the demo app server is not running at {demo_app_url}. You'll need to start it because "
+              f"we'll use it soon.")
+        sys.exit(1)
+    else:
+        print(f"✅ The demo app server is running at {demo_app_url}, as anticipated.")
 
 def main():
     check_robot_framework_package()
     check_browser_library_package()
     check_rflint_package()
     check_smoke_suite_location()
+    check_server_running()
     evaluate_environment()
     print("Setup in perfect condition!")
 
