@@ -27,7 +27,7 @@ Welcome Page Should Be Visible After Successful Login
     New Browser    headless=${FALSE}
     New Page    http://localhost:7272
     Fill Text    id=username_field    demo
-    Fill Secret    id=password_field    mode
+    Fill Text    id=password_field    mode
     Click    id=login_button
     Get Text    body    contains    Welcome Page
     Get Url    ==    http://localhost:7272/welcome.html
@@ -145,6 +145,12 @@ Let's add our `Variables` table and `URL` as a variable.
 - Add a variables table into your test suite.
 - Add `URL` as a variable with the value `http://localhost:7272`.
 - Replace all references to `http://localhost:7272` to use your variable
+
+To properly use Browser Library `Fill Secret` do the following:
+
+- Add `VALID_PASSWORD` as variable with the value `mode`
+- Refactor `Enter Password` to use `Fill Secret` instead of `Fill Text`
+- Add password value with syntax `$VALID_PASSWORD` which is required by keyword
 
 <details>
     <summary>Your variable table should look like this:</summary>

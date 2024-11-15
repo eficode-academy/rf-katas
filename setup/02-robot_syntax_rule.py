@@ -5,7 +5,6 @@ MUST_KEYWORDS = [
     "New Browser",
     "New Page",
     "Fill Text",
-    "Fill Secret",
 ]
 
 LOGIN_KEYWORDS = [
